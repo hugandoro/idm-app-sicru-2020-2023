@@ -1,45 +1,39 @@
-<?php require_once('Connections/sle.php'); ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
-<html xmlns="http://www.w3.org/1999/xhtml"> 
- 
-<head profile="http://gmpg.org/xfn/11"> 
-	<title>SICRU Ver 1.0</title> 
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
-	<link rel="STYLESHEET" type="text/css" href="estilo.css">
-</head> 
-<body>
+<?php include("includes/header.php"); ?>
+<?php include("includes/title.php"); ?>
 
-<center>
+<div class="row">
+    <div class="col-md-12">
 
-<TABLE>
-<TR><TD align="center"><p class="name"><img src="imagenes/header.png" width="100%" height="100%" /></p></TD></TR>
-</TABLE>
+        <div class="row">
+            <aside class="col-sm-4"></aside>
 
-<TABLE>
-<TR><TD align="center">
-    <form id="form2" name="form2" method="GET" action="validacion.php">
-    <p>&nbsp;</p>
-    <table width="160" border="0">
-    <tr>
-    <td>Usuario</td>
-    <td>
-    <label for="usuario"></label>
-    <input type="text" name="usuario" id="usuario" /></td></tr>
-    <tr>
-    <td>Contraseña</td>
-    <td><input name="password" type="password" id="password" /></td></tr>
-    <tr>
-    <td colspan="2" align="center">
-    <center><input name="button" type="submit" class="Botones" id="button" value="Iniciar Sesion" /></center></tr>
-    </table>
-    <p>&nbsp;</p>
-    </form>
-</TD></TR>
-</TABLE>
+            <aside class="col-sm-4">
+                <div class="card">
+                    <article class="card-body">
+                        <!-- <a href="" class="float-right btn btn-outline-primary">Sign up</a> -->
+                        <h4 class="card-title mb-4 mt-1">Registro de acceso</h4>
+                        <form id="form2" name="form2" method="POST" action="validacion.php">
+                            <div class="form-group">
+                                <label>Usuario</label>
+                                <input name="usuario" id="password" class="form-control" placeholder="Digite su usuario..." type="text">
+                            </div>
+                            <div class="form-group">
+                                <!-- <a class="float-right" href="#">Forgot?</a> -->
+                                <label>Contraseña</label>
+                                <input name="password" id="password" class="form-control" placeholder="Contraseña..." type="password">
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-success btn-block"> Ingresar </button>
+                            </div>
+                        </form>
+                    </article>
+                </div> <!-- card.// -->
+            </aside> <!-- col.// -->
 
+            <aside class="col-sm-4"></aside>
+        </div>
 
-<HR><img src="imagenes/logotipo_pie.png" /><br><HR>
-</center>
-</body>
-<?php mysqli_close($sle); ?></html>
+    </div>
+</div>
 
+<?php include("includes/footer.php"); ?>

@@ -1,0 +1,18 @@
+Niveles de acceso
+1 - Consulta
+2 - Consulta | Edicion
+3 - Consulta | Edicion | Ingreso
+4 - Consulta | Edicion | Ingreso- Borrar
+
+Niveles de estado cuentas de usuario
+0 - Estado inactivo
+1 - Estado activo
+
+Codigos Bases de datos
+BASE 0 - REU - Reubicados
+BASE 1 - MU - Mejoramiento urbano
+BASE 2 - MR - Mejoramiento rural
+BASE 3 - VIS - Vivienda de interes social
+BASE 4 - VIP - Vivienda de interes prioritario
+BASE 5 - DES - Desplazado
+BASE 6 - SP  - Sitio propio
