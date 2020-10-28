@@ -1,0 +1,3 @@
+Actualizar determinados campos desde una tabla Temporal a la tabla Ciudadanos en BLOQUE
+
+UPDATE `ciudadanos` JOIN temporal on ciudadanos.cedula = temporal.cedula SET ciudadanos.preaprobado_entidad = temporal.entidad, ciudadanos.preaprobado = temporal.preaprobado, ciudadanos.observaciones = temporal.observaciones, ciudadanos.fecha_actualizacion = temporal.fecha  WHERE ciudadanos.cedula = temporal.cedula;

@@ -1,0 +1,5 @@
+Exportar datos completos de personas postuladas a un proyecto
+1 - Giralda
+9 - Juncos
+
+SELECT * FROM `ciudadanos` T1 INNER JOIN `convocatorias_ciudadanos` T2 ON (T2.`cedula` = T1.`cedula`) AND (T2.id_proyecto = 9)

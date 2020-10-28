@@ -1,0 +1,217 @@
+BODY  {
+	font-family : verdana,arial,helvetica;
+	font-size : 10pt;
+	
+	background-image: url(imagenes/fondo.png);
+	background-repeat:repeat;
+}
+
+TD  {
+	font-family : verdana,arial,helvetica;
+	font-size : 10pt;
+	text-align: left;
+}
+
+INPUT  {
+	font-family : verdana, arial, helvetica;
+	font-size : 11pt;
+	color: #333333;
+}
+.Botones {
+	font-family : Verdana, Geneva, sans-serif;
+	font-size : 9pt;
+	color: #FFFFFF;
+	background-color: #333;
+	padding: 4px;
+	margin: 4px;
+	width: 250px;
+	height: 30px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+.TituloTABLAS {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 12px;
+	color: #FFF;
+	background-color: #333;
+}
+
+
+.Botones:hover {
+	font-family : Verdana, Geneva, sans-serif;
+	font-size : 9pt;
+	color: #FFFFFF;
+	background-color: #690;
+	padding: 4px;
+	margin: 4px;
+	width: 250px;
+	height: 30px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+} 
+
+TEXTAREA  {
+	font-family : verdana,arial,helvetica;
+	font-size : 10pt;
+}
+
+SELECT  {
+	font-family : verdana,arial,helvetica;
+	font-size : 10pt;
+}
+
+.tablacalendario{
+	width: 200px;
+}
+.tablacalendario TD {
+	font-family : verdana,arial,helvetica;
+	font-size : 10pt;
+	text-align: center;
+}
+.tablacalendario TD A{
+	text-decoration: none;
+}
+.diasemana  {
+	font-family : verdana,arial,helvetica;
+	font-size : 10pt;
+	color: #ffffff;
+	background-color: #666666;
+	text-align: center;
+}
+.tit, .titmesano  {
+	font-family : verdana,arial,helvetica;
+	font-size : 10pt;
+	color: #666;
+	background-color: #D1D9EF;
+	font-weight: bold;
+}
+.titmesano{
+	text-align: center;
+}
+.messiguiente, .mesanterior{
+	font-size:10pt;
+	font-weight:bold;
+	width: 16px;
+	height: 16px;
+}
+.messiguiente{
+	background: transparent url(132.png) no-repeat 2px;
+}
+.mesanterior{
+	background: transparent url(131.png) no-repeat 2px;
+}
+.messiguiente span, .mesanterior span{
+	visibility: hidden;
+}
+.mesanterior{
+	text-align: right;
+}
+.messiguiente a, .mesanterior a{
+	color:white;
+	text-decoration:none;
+}
+.diainvalido{
+	background-color: #ddd;
+}
+.hoy {
+	font-family : verdana,arial,helvetica;
+	font-size : 10pt;
+	background-color: #060;
+}
+.domingo {
+	font-family : verdana,arial,helvetica;
+	font-size : 10pt;
+	background-color: #990000;
+	color: #fff;
+}
+.domingo a, .hoy a{
+	color: #fff;
+}
+.diario {
+	font-family : verdana,arial,helvetica;
+	font-size : 10pt;
+	background-color: #ccf;
+	color: #fff;
+}
+.tform {
+	border-width: 1px;
+	border-color: 75263C;
+	border-style: solid;
+}
+.inputfecha{
+	height: 24px;
+	background: transparent url(calendario.png) no-repeat right;
+	padding: 2px;
+	width: 100px;
+	border: 1px solid #8BA0DF;
+	font-size: 12px;
+}.Titulo {
+	font-size: 14pt;
+	font-weight: bold;
+}
+.MiniTitulo {
+	font-size: 10pt;
+	font-weight: bold;
+}
+
+.Microtitulos {
+	font-size: 11px;
+	font-weight: normal;
+	color: #000000;
+	text-transform: none;
+	padding: 2px;
+	border: 1px solid #333;
+	width: 150px;
+}
+.MicrotitulosFINANCIERO {
+	font-size: 11px;
+	font-weight: normal;
+	color: #000000;
+	text-transform: none;
+	padding: 2px;
+	border: 1px solid #333;
+	width: 150px;
+}
+.MicrotitulosRIESGO {
+	font-size: 11px;
+	font-weight: normal;
+	color: #000000;
+	text-transform: none;
+	padding: 2px;
+	border: 1px solid #333;
+	width: 150px;
+}
+
+.MicrotitulosHOGAR {
+	font-size: 11px;
+	font-weight: normal;
+	color: #000000;
+	text-transform: none;
+	padding: 2px;
+	border: 1px solid #333;
+	width: 150px;
+}
+
+
+.MicrotitulosFUERTE {
+	font-size: 13px;
+	font-weight: bold;
+	color: #FF6600;
+	text-transform: none;
+	padding: 3px;
+	border: 1px solid #333;
+}
+.TituloFICHAS {
+	font-size: 16px;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-transform: uppercase;
+	padding: 3px;
+	border: 1px solid #333;
+	font-family: Verdana, Geneva, sans-serif;
+	background-color: #333;
+}

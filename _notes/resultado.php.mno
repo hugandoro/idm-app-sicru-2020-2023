@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_resultado" value="name:idpredios;datatype:int,name:fichacatastral;datatype:string,name:identificacionbeneficiario;datatype:string,name:nombrebeneficiario;datatype:string,name:direccion;datatype:string,name:avaluo2010;datatype:string,name:tarifa2010;datatype:string,name:predial2010;datatype:string,name:avaluo2011;datatype:string,name:tarifa2011;datatype:string,name:predial2011;datatype:string,name:diferencia;datatype:string,name:porcentual;datatype:string,name:porcentajedescuento;datatype:string,name:valordescuento;datatype:string,name:valorpredialunificado;datatype:string,name:carder;datatype:string,name:alumbrado;datatype:string,name:alumbradopublico;datatype:string,name:descuentoprontopago;datatype:string,name:total;datatype:string" />
+</info>
