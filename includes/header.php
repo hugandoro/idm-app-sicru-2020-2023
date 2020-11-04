@@ -6,6 +6,7 @@
     session_start();
 
     require_once('Connections/sle.php');
+    mysqli_query($sle, "SET NAMES 'utf8'");
 ?>
 <!doctype html>
 <html lang="es">
@@ -32,6 +33,27 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
+    <!-- Librerias para el TREEMAP -->
+    <link rel="stylesheet" href="jqwidgets/styles/jqx.base.css" type="text/css" />
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/demos.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxcore.js"></script>
+    <script src="jqwidgets/jqxtooltip.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxdata.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxtreemap.js"></script>
+    <!-- ************************* -->
+    <!-- Librerias para el GRAFICO BARRAS -->
+    <script type="text/javascript" src="jqwidgets/jqxdraw.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxchart.core.js"></script>
+    <!-- ************************* -->
+
+    <!-- Estilos personalizados -->
+    <style type="text/css">
+        a:link, a:visited, a:active {
+            text-decoration:none;
+        }
+    </style>
+    
 </head>
 
 <body>

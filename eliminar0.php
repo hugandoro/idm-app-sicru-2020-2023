@@ -1,14 +1,7 @@
-<?php require_once('Connections/sle.php'); 
-$currentPage = $_SERVER["PHP_SELF"];
-session_start();
-?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
-<html xmlns="http://www.w3.org/1999/xhtml"> 
- 
-<head profile="http://gmpg.org/xfn/11"> 
-	<title>SICRU Ver 1.0</title> 
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
-	<link rel="STYLESHEET" type="text/css" href="estilo.css">
+<?php include("includes/header.php"); ?>
+<?php include("includes/title.php"); ?>
+<?php include("includes/login_valid_session.php"); ?>
+
 <script type="text/javascript">
 //VERIFICAR ESPACIOS EN BLANCO
 	function noespacios() {
@@ -73,39 +66,9 @@ session_start();
 		else return false; 
 	} 
 </script>
-</head> 
-<body>
-<center>
-  <?php
-  //Verifica que exista una sesion creada
-  if (isset($_SESSION['nivel'])){
-	//Verifica que nivel de acceso tiene  
-	if ($_SESSION['nivel'] == "0"){
-	   echo "USUARIO INACTIVO EN EL SISTEMA";
-	   return;  
-	}
-  }
-  else
-  {
-	  echo "SU SESION A EXPIRADO POR TIEMPO O NO SE HA REGISTRADO EN NUESTRO SISTEMA";
-  	  return;
-  }
-?>
 
-<TABLE>
-<TR><TD align="center"><?php echo $Encabezado;?></TD></TR>  
-</TABLE>
+
 <TABLE width="460">
-<TR><TD width="347" align="center">
-  <table width="442" border="0" align="center">
-    <tr>
-      <td width="140"><img src="imagenes/Logotipo IDM.png" width="136" height="100" /></td>
-      <td width="140" align="center"><span class="name"><font size="+3">SICRU</font><br />
-        <br />
-        Bienvenido al sistema de cruces SICRU 1.0</span></td>
-      <td width="140" align="center"><img src="imagenes/OMPADE.jpg" width="79" height="100" /></td>
-    </tr>
-  </table></TD></TR>
 <TR>
   <TD align="center">
   <?php
@@ -175,16 +138,8 @@ session_start();
     </table>
   <p>&nbsp;</p></TD></TR>
 
-<TR><TD align="center">
-  <HR>
-  <p class="submit">
-    <label>Derechos Reservados SITIO INGENIERIA 2013<br>
-      <a href="http://www.sitioingenieria.com" title="SITIO INGENIERIA" target="_new">www.sitioingenieria.com</a></label>
-  </p></TD></TR>
-
 </TABLE>
 
 </center>
 
-</body>
-<?php mysqli_close($sle); ?></html>
+<?php include("includes/footer.php"); ?>

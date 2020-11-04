@@ -1,6 +1,7 @@
 <?php include("includes/header.php"); ?>
 <?php include("includes/title.php"); ?>
 
+<br>
 <div class="row">
     <div class="col-md-12">
 
@@ -11,7 +12,7 @@
                 <div class="card">
                     <article class="card-body">
                         <!-- <a href="" class="float-right btn btn-outline-primary">Sign up</a> -->
-                        <h4 class="card-title mb-4 mt-1">Registro de acceso</h4>
+                        <!-- <h4 class="card-title mb-4 mt-1">Registro de acceso</h4> -->
                         <form id="form2" name="form2" method="POST" action="validacion.php">
                             <div class="form-group">
                                 <label>Usuario</label>

@@ -1,0 +1,9 @@
+ISSUE 001
+consulta0.php -> eliminar0.php
+Actualmente esta pasando codigo del registro a borrar por GET
+Debe se pasado por POST para que no sea visualizado por usuario
+
+ISSUE 002
+consulta0.php -> eliminar0.php
+No esta validando permisos asignados para DELETE registros
+Debe validar previamente para evitar acciones de usuarios sin niveles de acceso
