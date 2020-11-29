@@ -62,7 +62,7 @@
     
 </head>
 
-<body>
+<body style="background-color: #D5D8DC;">
     <div class="container">
     <!--- Inicia el contenido -->
 
