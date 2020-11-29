@@ -124,7 +124,7 @@
     } else {
       echo "<div class='alert alert-danger' style='text-align: center;'>";
       echo "NO TIENE PERMISOS PARA CONSULTAR ESTA BASE DE DATOS<BR><BR>";
-      echo "<a href='menu.php'><input type='submit' name='Volver2' class='btn btn-success btn-block' id='Volver2' value='Volver' /></a>";
+      echo "<a href='menu.php'><input type='submit' name='Volver2' class='btn btn-success btn-block' id='Volver2' value='Volver a la ventana anterior...' /></a>";
       echo "</div>";
       return;
     }
@@ -140,7 +140,11 @@
   <aside class="col-sm-12">
     <table class="table table-bordered">
       <tr>
-        <td colspan="4"><div class='alert alert-secondary'><H5>DATOS BASICOS</H5></div></td>
+        <td colspan="4">
+          <div class='alert alert-secondary'>
+            <H5>DATOS BASICOS</H5>
+          </div>
+        </td>
       </tr>
 
       <tr>
@@ -287,7 +291,11 @@
         <td><?php echo $row[42] ?></td>
       </tr>
       <tr>
-        <td colspan="4"><div class='alert alert-secondary'><H5>INFORMACION FINANCIERA</H5></div></td>
+        <td colspan="4">
+          <div class='alert alert-secondary'>
+            <H5>INFORMACION FINANCIERA</H5>
+          </div>
+        </td>
       </tr>
 
       <tr>
@@ -315,7 +323,11 @@
         <td><?php echo $row[75] ?></td>
       </tr>
       <tr>
-        <td colspan="4" ><div class='alert alert-secondary'><H5>INFORMACION DE RIESGO</H5></div></td>
+        <td colspan="4">
+          <div class='alert alert-secondary'>
+            <H5>INFORMACION DE RIESGO</H5>
+          </div>
+        </td>
       </tr>
 
       <tr>
@@ -331,7 +343,11 @@
         <td><?php echo $row[35] ?></td>
       </tr>
       <tr>
-        <td colspan="4" ><div class='alert alert-secondary'><H5>INFORMACION DE LA VIVIENDA</H5></div></td>
+        <td colspan="4">
+          <div class='alert alert-secondary'>
+            <H5>INFORMACION DE LA VIVIENDA</H5>
+          </div>
+        </td>
       </tr>
 
       <tr>
@@ -429,7 +445,7 @@
         </td>
         <td>&nbsp;</td>
         <td><a href='menu.php'>
-            <input name='Volver2' type='submit' class='btn btn-success btn-block' id='Volver2' value='Volver' />
+            <input name='Volver2' type='submit' class='btn btn-success btn-block' id='Volver2' value='Volver a la ventana anterior...' />
           </a></td>
       </tr>
     </table>

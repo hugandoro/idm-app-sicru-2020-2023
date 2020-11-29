@@ -47,6 +47,12 @@
     <script type="text/javascript" src="jqwidgets/jqxchart.core.js"></script>
     <!-- ************************* -->
 
+    <!-- Librerias CHARTJS -->
+    <script type="text/javascript" src="https://www.chartjs.org/dist/2.9.3/Chart.min.js"></script>
+    <script type="text/javascript" src="https://www.chartjs.org/samples/latest/utils.js"></script>
+    <!-- <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script> -->
+    <!-- ************************* -->
+
     <!-- Estilos personalizados -->
     <style type="text/css">
         a:link, a:visited, a:active {
@@ -59,3 +65,9 @@
 <body>
     <div class="container">
     <!--- Inicia el contenido -->
+
+    <?php 
+        if (isset($_SESSION['nivel'])){
+            include("includes/nav.php"); 
+        }
+    ?>
