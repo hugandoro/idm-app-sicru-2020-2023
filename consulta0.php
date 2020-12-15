@@ -118,6 +118,12 @@
       $resultado = mysqli_query($sle, $sql) or die(mysqli_error());
       if (mysqli_num_rows($resultado) > 0) $paso = 1;
     }
+    if (($base == 7) && ($_SESSION["MEJORAMIENTO"] >= "1")) {
+      echo "<div style='text-align: center;'><H3>BASE DE DATOS - Mejoramiento</H3><HR></div>";
+      $sql = "SELECT * FROM ciudadanos WHERE (cedula = '$cedula')";
+      $resultado = mysqli_query($sle, $sql) or die(mysqli_error());
+      if (mysqli_num_rows($resultado) > 0) $paso = 1;
+    }
 
     if ($paso == 1) {
       $row = mysqli_fetch_row($resultado);
@@ -411,6 +417,9 @@
           <?php if (($base == 6) && ($_SESSION["SP"] >= "2")) { ?>
             <a href='editar0.php?base=<?php echo $base ?>&cedula=<?php echo $cedula ?>'><input name='Volver' type='submit' class='btn btn-info' id='Volver' value='EDITAR ficha' /></a>
           <?php } ?>
+          <?php if (($base == 7) && ($_SESSION["MEJORAMIENTO"] >= "2")) { ?>
+            <a href='editar0.php?base=<?php echo $base ?>&cedula=<?php echo $cedula ?>'><input name='Volver' type='submit' class='btn btn-info' id='Volver' value='EDITAR ficha' /></a>
+          <?php } ?>
 
           <!-- BOTON PARA ELIMINAR -->
           <?php if (($base == 0) && ($_SESSION["REU"] == "4")) { ?>
@@ -438,6 +447,10 @@
             </a>
           <?php } ?>
           <?php if (($base == 6) && ($_SESSION["SP"] == "4")) { ?>
+            <a href='eliminar0.php?base=<?php echo $base ?>&cedula=<?php echo $cedula ?>' onclick="return confirmar('ALERTA !!! ¿Estas seguro de eliminar?')"><input name='Volver3' type='submit' class='btn btn-danger' id='Volver3' value='ELIMINAR ficha' />
+            </a>
+          <?php } ?>
+          <?php if (($base == 7) && ($_SESSION["MEJORAMIENTO"] == "4")) { ?>
             <a href='eliminar0.php?base=<?php echo $base ?>&cedula=<?php echo $cedula ?>' onclick="return confirmar('ALERTA !!! ¿Estas seguro de eliminar?')"><input name='Volver3' type='submit' class='btn btn-danger' id='Volver3' value='ELIMINAR ficha' />
             </a>
           <?php } ?>

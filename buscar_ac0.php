@@ -13,12 +13,13 @@ $mr = 0;
 $mu = 0;
 $pr = 0;
 $vip = 0;
-$vis = 0;
+$vis = 0; //VIVIENDA NUEVA
 $des = 0;
 $sip = 0;
 $reubicado = 0;
 $comfamiliar = 0;
 $familiar = 0;
+$mejora = 0; //MEJORAMIENTO
 
 mysqli_select_db($sle, $database_sle);
 mysqli_query($sle, "SET NAMES 'utf8'");
@@ -40,6 +41,8 @@ while ($row = mysqli_fetch_row($resultado)) {
 		$des = 1;
 	if ($row[73] == 6)
 		$sip = 1;
+	if ($row[73] == 7)
+		$mejora = 1;
 }
 
 $sql = "SELECT * FROM cruce_comfamiliar WHERE ((afiliado!='') || (beneficiario!='') || (otras_ciudades!='')) && (cedula = '$cedula')";
@@ -52,7 +55,7 @@ if (mysqli_num_rows($resultado) > 0) {
 	$otras_ciudades = $row[3];
 }
 
-$aux = $mr + $mu + $pr + $vip + $vis + $des + $sip + $reubicado + $comfamiliar;
+$aux = $mr + $mu + $pr + $vip + $vis + $des + $sip + $mejora + $reubicado + $comfamiliar;
 ?>
 
 <div class="row">
@@ -139,6 +142,7 @@ $aux = $mr + $mu + $pr + $vip + $vis + $des + $sip + $reubicado + $comfamiliar;
 			if ($vis == 1) echo "<a href='consulta0.php?cedula=" . $cedula . "&base=3'><input type='submit' class='btn btn-warning btn-block' name='Vivienda Nueva' id='VIS' value='Vivienda Nueva' class='Botones'/></a>";
 			if ($des == 1) echo "<a href='consulta0.php?cedula=" . $cedula . "&base=5'><input type='submit' class='btn btn-warning btn-block' name='Desplazado' id='DES' value='Desplazado' class='Botones'/></a>";
 			if ($sip == 1) echo "<a href='consulta0.php?cedula=" . $cedula . "&base=6'><input type='submit' class='btn btn-warning btn-block' name='Sitio Propio' id='SIP' value='Sitio Propio' class='Botones'/></a>";
+			if ($mejora == 1) echo "<a href='consulta0.php?cedula=" . $cedula . "&base=7'><input type='submit' class='btn btn-warning btn-block' name='Mejoramiento' id='MEJORA' value='Mejoramiento' class='Botones'/></a>";
 		}
 
 		//***********************************************************************	

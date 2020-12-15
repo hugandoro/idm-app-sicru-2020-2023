@@ -19,6 +19,7 @@
 			if (($base == 4) && ($_SESSION["VIP"] >= "2")) $paso = 1;
 			if (($base == 5) && ($_SESSION["DES"] >= "2")) $paso = 1;
 			if (($base == 6) && ($_SESSION["SP"] >= "2")) $paso = 1;
+			if (($base == 7) && ($_SESSION["MEJORAMIENTO"] >= "2")) $paso = 1;
 			if ($paso == 0) {
 				echo "<CENTER><BR><BR>";
 				echo "NO TIENE PERMISOS PARA ACCEDER A ESTA BASE DE DATOS<BR>";

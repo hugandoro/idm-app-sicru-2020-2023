@@ -32,7 +32,11 @@ $sql = "SELECT * FROM ciudadanos WHERE id_base = 6";
 $resultado = mysqli_query($sle, $sql) or die(mysqli_error());
 $sip = mysqli_num_rows($resultado);
 
-$total = $mr + $mu + $reb + $vip + $vis + $des + $sip;
+$sql = "SELECT * FROM ciudadanos WHERE id_base = 7";
+$resultado = mysqli_query($sle, $sql) or die(mysqli_error());
+$mejora = mysqli_num_rows($resultado);
+
+$total = $mr + $mu + $reb + $vip + $vis + $des + $sip + $mejora;
 $mr_por = ($mr * 100) / $total;
 $mu_por = ($mu * 100) / $total;
 $reb_por = ($reb * 100) / $total;
@@ -40,6 +44,7 @@ $vip_por = ($vip * 100) / $total;
 $vis_por = ($vis * 100) / $total;
 $des_por = ($des * 100) / $total;
 $sip_por = ($sip * 100) / $total;
+$mejora_por = ($mejora * 100) / $total;
 ?>
 <!-- FIN Calculo datos estadisticos -->
 
@@ -66,27 +71,17 @@ $sip_por = ($sip * 100) / $total;
   var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: ['Rural', 'Urbano', 'Reubicacion', 'VIP', 'VIS', 'Desplazados', 'Sitio propio'],
+      labels: ['Vivienda Nueva', 'Mejoramiento'],
       datasets: [{
         label: 'Personas registradas',
-        data: ["<?php echo $mr; ?>", "<?php echo $mu; ?>", "<?php echo $reb; ?>", "<?php echo $vip; ?>", "<?php echo $vis; ?>", "<?php echo $des; ?>", "<?php echo $sip; ?>"],
+        data: ["<?php echo $vis; ?>", "<?php echo $mejora; ?>"],
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-          'rgba(75, 192, 192, 0.2)',
-          'rgba(153, 102, 255, 0.2)',
-          'rgba(255, 159, 64, 0.2)',
-          'rgba(255, 59, 64, 0.2)'
+          'rgba(54, 162, 235, 0.2)'
         ],
         borderColor: [
           'rgba(255, 99, 132, 1)',
-          'rgba(54, 162, 235, 1)',
-          'rgba(255, 206, 86, 1)',
-          'rgba(75, 192, 192, 1)',
-          'rgba(153, 102, 255, 1)',
-          'rgba(255, 159, 64, 1)',
-          'rgba(255, 59, 64, 0.2)'
+          'rgba(54, 162, 235, 1)'
         ],
         borderWidth: 1
       }]

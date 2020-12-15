@@ -21,7 +21,8 @@
     if (($base==3) && ($_SESSION["VIS"] == "4")) $paso=1;		
     if (($base==4) && ($_SESSION["VIP"] == "4")) $paso=1;
     if (($base==5) && ($_SESSION["DES"] == "4")) $paso=1;
-    if (($base==6) && ($_SESSION["SP"] == "4")) $paso=1;	
+	if (($base==6) && ($_SESSION["SP"] == "4")) $paso=1;
+	if (($base==7) && ($_SESSION["MEJORAMIENTO"] == "4")) $paso=1;		
 	
     if ($paso==1)
 	{
@@ -32,13 +33,15 @@
 		if ($base==2)
 		  echo "<center><BR><H4>BASE DE DATOS - Mejora Vivienda Rural</H4></center><HR>"; 
 		if ($base==3)
-		  echo "<center><BR><H4>BASE DE DATOS - VIS</H4></center><HR>"; 
+		  echo "<center><BR><H4>BASE DE DATOS - Vivienda nueva</H4></center><HR>"; 
 		if ($base==4)
 		  echo "<center><BR><H4>BASE DE DATOS - VIP</H4></center><HR>"; 
 		if ($base==5)
 		  echo "<center><BR><H4>BASE DE DATOS - Desplazados</H4></center><HR>"; 
 		if ($base==6)
 		  echo "<center><BR><H4>BASE DE DATOS - Sitio Propio</H4></center><HR>"; 
+		if ($base==7)
+		  echo "<center><BR><H4>BASE DE DATOS - Mejoramiento</H4></center><HR>"; 
 		  
 		$sql="DELETE FROM ciudadanos WHERE (cedula = '$cedula')";
 		$resultado=mysqli_query($sle,$sql)or die (mysqli_error()); 

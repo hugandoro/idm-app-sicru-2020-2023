@@ -112,6 +112,12 @@
       $resultado = mysqli_query($sle, $sql) or die(mysqli_error());
       if (mysqli_num_rows($resultado) > 0) $paso = 1;
     }
+    if (($base == 7) && ($_SESSION["MEJORAMIENTO"] >= "2")) {
+      echo "<div style='text-align: center;'><H3>BASE DE DATOS - Mejoramiento</H3><HR></div>";
+      $sql = "SELECT * FROM ciudadanos WHERE (cedula = '$cedula')";
+      $resultado = mysqli_query($sle, $sql) or die(mysqli_error());
+      if (mysqli_num_rows($resultado) > 0) $paso = 1;
+    }
 
     if ($paso == 1) {
       $row = mysqli_fetch_row($resultado);

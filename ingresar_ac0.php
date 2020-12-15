@@ -10,11 +10,12 @@ $mr = 0;
 $mu = 0;
 $pr = 0;
 $vip = 0;
-$vis = 0;
+$vis = 0; //VIVIENDA NUEVA
 $des = 0;
 $sip = 0;
 $reubicado = 0;
 $grupo = 0;
+$mejora = 0; //MEJORAMIENTO
 //$comfamiliar = 0;
 
 mysqli_select_db($sle, $database_sle);
@@ -37,6 +38,8 @@ while ($row = mysqli_fetch_row($resultado)) {
 		$des = 1;
 	if ($row[73] == 6)
 		$sip = 1;
+	if ($row[73] == 7)
+		$mejora = 1;
 }
 
 
@@ -58,7 +61,7 @@ while ($rowFAM = mysqli_fetch_row($resultadoFAM)) {
 }
 //*********************************************		
 
-$aux = $mr + $mu + $pr + $vip + $vis + $des + $sip + $reubicado + $grupo; // + $comfamiliar;
+$aux = $mr + $mu + $pr + $vip + $vis + $des + $sip + $mejora + $reubicado + $grupo; // + $comfamiliar;
 ?>
 
 <div class="row">
@@ -76,6 +79,7 @@ $aux = $mr + $mu + $pr + $vip + $vis + $des + $sip + $reubicado + $grupo; // + $
 			if ($vis == 1) echo "<center>N° de identificacion registrado para <B>Vivienda Nueva</B><HR></center>";
 			if ($des == 1) echo "<center>N° de identificacion registrado para <B>Condicion de Desplazamiento</B><HR></center>";
 			if ($sip == 1) echo "<center>N° de identificacion registrado para <B>Construccion en Sitio Propio</B><HR></center>";
+			if ($mejora == 1) echo "<center>N° de identificacion registrado para <B>Mejoramiento</B><HR></center>";
 			if ($reubicado == 1) echo "<center><B>N° de identificacion en lista de *** REUBICADOS ***</B><HR></center>";
 
 			//CONSULTA SI ESTA EN ALGUN NUCLEO FAMILIAR
@@ -100,13 +104,14 @@ $aux = $mr + $mu + $pr + $vip + $vis + $des + $sip + $reubicado + $grupo; // + $
 					<label><h6>Seleccione BASE DE DATOS para inscripcion</h6></label>
 					<select name="base" id="base" input class="form-control">
 						<?php
-						if ($_SESSION["REU"] >= "3") echo "<option value='0'>Por Reubicar</option>";
-						if ($_SESSION["MU"] >= "3") echo "<option value='1'>Mejora de Vivienda Urbana</option>";
-						if ($_SESSION["MR"] >= "3") echo "<option value='2'>Mejora de Vivienda Rural</option>";
+						//if ($_SESSION["REU"] >= "3") echo "<option value='0'>Por Reubicar</option>";
+						//if ($_SESSION["MU"] >= "3") echo "<option value='1'>Mejora de Vivienda Urbana</option>";
+						//if ($_SESSION["MR"] >= "3") echo "<option value='2'>Mejora de Vivienda Rural</option>";
 						if ($_SESSION["VIS"] >= "3") echo "<option value='3'>Vivienda Nueva</option>";
 						//if ($_SESSION["VIP"] >= "3") echo "<option value='4'>Vivienda de Interes Prioritario</option>";
-						if ($_SESSION["DES"] >= "3") echo "<option value='5'>Desplazados</option>";
-						if ($_SESSION["SP"] >= "3") echo "<option value='6'>Construccion en Sitio Propio</option>";
+						//if ($_SESSION["DES"] >= "3") echo "<option value='5'>Desplazados</option>";
+						//if ($_SESSION["SP"] >= "3") echo "<option value='6'>Construccion en Sitio Propio</option>";
+						if ($_SESSION["MEJORAMIENTO"] >= "3") echo "<option value='7'>Mejoramiento</option>";
 						?>
 					</select>
 				</div>

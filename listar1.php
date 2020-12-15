@@ -119,6 +119,13 @@
       echo "<center><font size='+2'>BASE DE DATOS - Construccion en Sitio Propio</font><BR>" . $numero . " Registros encontrados </center>";
       $paso = 1;
     }
+    if (($base == 7) && ($_SESSION["MEJORAMIENTO"] >= "1")) {
+      $sql = "SELECT * FROM ciudadanos WHERE id_base = '7'";
+      $resultado = mysqli_query($sle, $sql) or die(mysqli_error());
+      $numero = mysqli_num_rows($resultado);
+      echo "<center><font size='+2'>BASE DE DATOS - Mejoramiento</font><BR>" . $numero . " Registros encontrados </center>";
+      $paso = 1;
+    }
 
     if ($paso == 0) {
       echo "<CENTER><BR><BR>";

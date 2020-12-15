@@ -35,7 +35,7 @@
         }
 
         .portada {
-            background: url(https://i0.wp.com/bestlifeonline.com/wp-content/uploads/2018/03/People-Walking-in-Crowded-City.jpg) no-repeat fixed center;
+            background: url(https://www.publicdomainpictures.net/pictures/30000/velka/yellow-green-blur-background.jpg) no-repeat fixed center;
             /* background: url(https://consultorsalud.com/wp-content/uploads/2020/02/poblacion-colombiana-actualidad-consultorsalud.jpg) no-repeat fixed center; */
             -webkit-background-size: cover;
             -moz-background-size: cover;
@@ -59,8 +59,8 @@
         <!-- 100%—FF 95%—F2 90%—E6 85%—D9 80%—CC 75%—BF 70%—B3 65%—A6 60%—99 55%—8C 50%—80 45%—73 40%—66 35%—59 30%—4D 25%—40 20%—33 15%—26 10%—1A 5%—0D 0%—00 -->
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark fixed-top" style="background:#ffffffBF;">
             <div class="container">
-                <a class="navbar-brand" href="#"><img src="imagenes/logotipo_pie_2.png" alt="" height="60 px"></a><b style="color:#444444;">
-                    <h6> .:: Dosquebradas 2020 - 2023</h6>
+                <b style="color:#444444;">
+                    <h6>INSTITUTO DE DESARROLLO MUNICIPAL - IDM .:: Dosquebradas 2020 - 2023</h6>
                 </b>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -86,7 +86,7 @@
 
                         <div class="col-1"></div>
                         <div class="col-10" align="center">
-                            <div style="font-size: 36pt;color: #ffffff;"><b>Bienvenido a la plataforma SICRU</b></div>
+                            <div style="font-size: 36pt;color: #000000;"><b>Bienvenido a la plataforma SICRU</b></div>
                         </div>
                         <div class="col-1"></div>
 
@@ -94,7 +94,7 @@
 
                         <div class="col-2"></div>
                         <div class="col-8" align="center">
-                            <div style="font-size: 14pt; color: #ffffff;">Base de datos oficial del Instituto de Desarrollo Municipal de Dosquebradas para identificación de potenciales beneficiarios<hr></div>
+                            <div style="font-size: 14pt; color: #000000;">Base de datos oficial del Instituto de Desarrollo Municipal de Dosquebradas para identificación de potenciales beneficiarios<hr></div>
                         </div>
                         <div class="col-2"></div>
 

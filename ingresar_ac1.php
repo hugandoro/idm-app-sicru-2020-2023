@@ -647,6 +647,10 @@
       echo "<div style='text-align: center;'><H3>BASE DE DATOS - Construccion en Sitio Propio</H3><HR></div>"; //BASE = 6 - Construccion en Sitio Propio	
       $paso = 1;
     }
+    if (($base == 7) && ($_SESSION["MEJORAMIENTO"] >= "3")) {
+      echo "<div style='text-align: center;'><H3>BASE DE DATOS - Mejoramiento</H3><HR></div>"; //BASE = 7 - Mejoramiento
+      $paso = 1;
+    }
 
     if ($paso == 0) {
       echo "<CENTER><BR><BR>";
