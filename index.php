@@ -102,7 +102,7 @@
 
                         <div class="col-3"></div>
                         <div class="col-3">
-                            <a href="#"><button type="submit" class="btn btn-lg btn-success"><span class="fa fa-search"></span> Consulta</button></a>
+                            <a href="ciudadano_buscar_ac.php"><button type="submit" class="btn btn-lg btn-success"><span class="fa fa-search"></span> Consulta</button></a>
                         </div>
                         <div class="col-3">
                             <a href="#"><button type="submit" class="btn btn-lg btn-success"><span class="fa fa-file"></span> Preinscribete</button></a>
