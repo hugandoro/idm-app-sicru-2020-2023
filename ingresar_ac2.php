@@ -9,7 +9,37 @@
 
 		<p>
 			<?php
-			$base =	$_POST['base'];
+			$base =	$_POST['base']; //BASE MADRE
+			$sub_base =	$_POST['sub_base']; //Sub base acorde a la BASE MADRE
+
+
+			//Asignacion de subcategoria acorde a SUB_BASE
+			$MEU = $MER = $DES = $SIP = $REU = $VIP = "NO";
+			switch ($sub_base) {
+				case 'MEU':
+					$MEU = "SI"; // Mejoramiento Urbano
+					break;
+				case 'MER':
+					$MER = "SI"; // Mejoramiento Rural
+					break;
+				case 'DES':
+					$DES = "SI"; // Desplazado
+					break;
+				case 'SIP':
+					$SIP = "SI"; // Sitio Propio
+					break;
+				case 'REU':
+					$REU = "SI"; // Reubicado
+					break;
+				case 'VIP':
+					$VIP = "SI"; // Vivienda de interes prioritaria
+					break;					
+				default:
+					break;
+			}
+			// Fin asignacion ********************************
+
+
 			$cedula = $_POST['cedula'];
 			$situacion = $_POST['situacion'];
 			$laboral = $_POST['laboral']; //***
@@ -106,7 +136,24 @@
 			mysqli_query($sle, "SET NAMES 'utf8'");
 
 			//PROCEDEMOS A INGRESAR EL NUEVO REGISTRO SEGUN LA BASE SELECCIONADA
-			$sql = "INSERT INTO ciudadanos (cedula, situacion_actual, situacion_laboral, parentesco, nombre1, nombre2, apellido1, apellido2, edad, direccion, barrio, comuna, zona, fijo, celular, observaciones, fecha, fecha_actualizacion, tipo_evento, familiar1, edad1, familiar2, edad2, familiar3, edad3, familiar4, edad4, familiar5, edad5, familiar6, edad6, familiar7, edad7, familiar8, edad8, familiar9, edad9, familiar10, edad10, email, inmueble_actual, inmueble_titulo, inmueble_tiempo, inmueble_material, zona_riesgo, cantidad_gf, madre_ch, poblacion_depe, grupo_etnico, encuestado_tel, encuestado_per, visitado, matricula_inmobiliaria, ficha_catastro, numero_escritura, servicios_publicos, radicado, ente_radicado, doc_fami1, doc_fami2, doc_fami3, doc_fami4, doc_fami5, doc_fami6, doc_fami7, doc_fami8, doc_fami9, doc_fami10, id_base, preaprobado, preaprobado_entidad, cesantias, cesantias_entidad, valor_ahorrado, entidad, num_cuenta, tipo_mejoramiento) VALUES ('$cedula', '$situacion', '$laboral', '$parentesco', '$nombre1', '$nombre2', '$apellido1', '$apellido2', '$edad', '$direccion', '$barrio', '$comuna', '$zona', '$fijo', '$celular', '$observaciones', '$fecha', '$fecha_actualizacion', '$tipoevento', '$familiar1', '$edad1', '$familiar2', '$edad2', '$familiar3', '$edad3', '$familiar4', '$edad4', '$familiar5', '$edad5', '$familiar6', '$edad6', '$familiar7', '$edad7', '$familiar8', '$edad8', '$familiar9', '$edad9', '$familiar10', '$edad10', '$email', '$inmueble_actual', '$inmueble_titulo', '$inmueble_tiempo', '$inmueble_material', '$zona_riesgo', '$cantidad_gf', '$madre_ch', '$poblacion_depe', '$grupo_etnico', '$encuestado_tel', '$encuestado_per', '$visitado', '$inmueble_matricula', '$inmueble_catastral', '$inmueble_escritura', '$inmueble_servicios', '$radicado', '$ente_remite', '$docu1', '$docu2', '$docu3', '$docu4', '$docu5', '$docu6', '$docu7', '$docu8', '$docu9', '$docu10', '$base', '$preaprobadovalor', '$preaprobadoentidad', '$cesantiasvalor', '$cesantiasentidad', '$valorahorrado', '$entidad', '$numcuenta', '$inmueble_solicitud')";
+			$sql = "INSERT INTO ciudadanos (cedula, situacion_actual, situacion_laboral, parentesco, nombre1, nombre2, apellido1, apellido2, 
+					edad, direccion, barrio, comuna, zona, fijo, celular, observaciones, fecha, fecha_actualizacion, tipo_evento, familiar1, 
+					edad1, familiar2, edad2, familiar3, edad3, familiar4, edad4, familiar5, edad5, familiar6, edad6, familiar7, edad7, 
+					familiar8, edad8, familiar9, edad9, familiar10, edad10, email, inmueble_actual, inmueble_titulo, inmueble_tiempo, 
+					inmueble_material, zona_riesgo, cantidad_gf, madre_ch, poblacion_depe, grupo_etnico, encuestado_tel, encuestado_per, 
+					visitado, matricula_inmobiliaria, ficha_catastro, numero_escritura, servicios_publicos, radicado, ente_radicado, doc_fami1, 
+					doc_fami2, doc_fami3, doc_fami4, doc_fami5, doc_fami6, doc_fami7, doc_fami8, doc_fami9, doc_fami10, id_base, preaprobado, 
+					preaprobado_entidad, cesantias, cesantias_entidad, valor_ahorrado, entidad, num_cuenta, tipo_mejoramiento, 
+					por_reubicar, mejora_urbana, mejora_rural, vivienda_prioritaria, condicion_desplazado, tiene_sitio_propio) 
+					VALUES ('$cedula', '$situacion', '$laboral', '$parentesco', '$nombre1', '$nombre2', '$apellido1', '$apellido2', 
+					'$edad', '$direccion', '$barrio', '$comuna', '$zona', '$fijo', '$celular', '$observaciones', '$fecha', '$fecha_actualizacion', '$tipoevento', '$familiar1', 
+					'$edad1', '$familiar2', '$edad2', '$familiar3', '$edad3', '$familiar4', '$edad4', '$familiar5', '$edad5', '$familiar6', '$edad6', '$familiar7', '$edad7', 
+					'$familiar8', '$edad8', '$familiar9', '$edad9', '$familiar10', '$edad10', '$email', '$inmueble_actual', '$inmueble_titulo', '$inmueble_tiempo', 
+					'$inmueble_material', '$zona_riesgo', '$cantidad_gf', '$madre_ch', '$poblacion_depe', '$grupo_etnico', '$encuestado_tel', '$encuestado_per', 
+					'$visitado', '$inmueble_matricula', '$inmueble_catastral', '$inmueble_escritura', '$inmueble_servicios', '$radicado', '$ente_remite', '$docu1', 
+					'$docu2', '$docu3', '$docu4', '$docu5', '$docu6', '$docu7', '$docu8', '$docu9', '$docu10', '$base', '$preaprobadovalor', 
+					'$preaprobadoentidad', '$cesantiasvalor', '$cesantiasentidad', '$valorahorrado', '$entidad', '$numcuenta', '$inmueble_solicitud', 
+					'$REU', '$MEU', '$MER', '$VIP', '$DES', '$SIP')";
 
 			mysqli_query($sle, $sql) or die(mysqli_error());
 			echo "<div class='alert alert-success'><center>Registro de ficha a nombre de <B>$nombre1 $nombre2 $apellido1 $apellido2</B> realizado exitosamente</center></div><br>";

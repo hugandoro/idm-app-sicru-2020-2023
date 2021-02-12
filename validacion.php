@@ -49,6 +49,17 @@ $_SESSION["VISITA"] = $row[17];
 
 $_SESSION["MEJORAMIENTO"] = $row[19];
 $_SESSION["VIVIENDA_NUEVA"] = $row[20];
+
+// CALCULO NUMERO MAGICO- PUNTAJE POR ANTIGUEDAD
+// Obtiene el ID_CIUDADANO mas reciente el cual sera tomado como NUMERO MAGICO para el calculo de
+// los puntos por antiguedad acorde a la siguiente formular...
+// 5 - ( 5 / NUMERO MAGICO) * ( ID_CIUDADANO - 1)
+$sql = "SELECT * FROM ciudadanos ORDER BY id_ciudadano DESC";
+$resultadoAntiguedad = mysqli_query($sle, $sql) or die(mysqli_error());
+$rowAntiguedad = mysqli_fetch_row($resultadoAntiguedad);
+$_SESSION["NUMERO_MAGICO"]  = $rowAntiguedad[80];
+// -------------------------------------------------
+
 ?>
 
 <!-- Contenido -->

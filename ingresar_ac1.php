@@ -356,7 +356,7 @@
     //*****************************************************************
 
     //VERIFICA CAMPOS VACIOS
-    //MEJORAMIENTO RURAL *************************************
+    //SITIO PROPIO *******************************************
     //********************************************************
     if (B == '6') {
       if (document.getElementById('parentesco').value == '') {
@@ -406,6 +406,63 @@
     }
     //*****************************************************************
     //*****************************************************************
+
+    //VERIFICA CAMPOS VACIOS
+    //MEJORAMIENTO *******************************************
+    //********************************************************
+    if (B == '7') {
+      if (document.getElementById('parentesco').value == '') {
+        alert('MEJORAMIENTO - Requiere *** PARENTESCO ***');
+        return false;
+      }
+      if (document.getElementById('nombre1').value == '') {
+        alert('MEJORAMIENTO - Requiere *** NOMBRE 1 ***');
+        return false;
+      }
+      if (document.getElementById('apellido1').value == '') {
+        alert('MEJORAMIENTO - Requiere *** APELLIDO 1 ***');
+        return false;
+      }
+      if (document.getElementById('direccion').value == '') {
+        alert('MEJORAMIENTO - Requiere *** DIRECCION ***');
+        return false;
+      }
+      if (document.getElementById('barrio').value == '') {
+        alert('MEJORAMIENTO - Requiere *** BARRIO ***');
+        return false;
+      }
+      if (document.getElementById('zona').value == '') {
+        alert('MEJORAMIENTO - Requiere *** ZONA ***');
+        return false;
+      }
+      if ((document.getElementById('fijo').value == '') && (document.getElementById('celular').value == '')) {
+        alert('MEJORAMIENTO - Requiere *** FIJO O CELULAR ***');
+        return false;
+      }
+      if (document.getElementById('inmueble_actual').value == '') {
+        alert('MEJORAMIENTO - Requiere *** INMUEBLE ACTUAL ***');
+        return false;
+      }
+      if (document.getElementById('inmueble_titulo').value == '') {
+        alert('MEJORAMIENTO - Requiere *** INMUEBLE TITULO ***');
+        return false;
+      }
+      if (document.getElementById('inmueble_escritura').value == '') {
+        alert('MEJORAMIENTO- Requiere *** INMUEBLE ESCRITURA ***');
+        return false;
+      }
+      if (document.getElementById('inmueble_servicios').value == '') {
+        alert('MEJORAMIENTO - Requiere *** INMUEBLE SERVICIOS ***');
+        return false;
+      }
+      if (document.getElementById('inmueble_solicitud').value == '') {
+        alert('MEJORAMIENTO - Requiere *** INMUEBLE TIPO SOLICITUD ***');
+        return false;
+      }
+    }
+    //*****************************************************************
+    //*****************************************************************
+
 
     return true;
   }
@@ -614,6 +671,22 @@
       $c60 = $c4;
       $c64 = $c4;
       $c65 = $c4;
+    }
+    if ($base == 7) //MEJORAMIENTO
+    {
+      $c4 = "#FADBD8";
+      $c5 = $c4;
+      $c7 = $c4;
+      $c10 = $c4;
+      $c11 = $c4;
+      $c13 = $c4;
+      $c14 = $c4;
+      $c15 = $c4;
+      $c59 = $c4;
+      $c60 = $c4;
+      $c63 = $c4;
+      $c66 = $c4;
+      $c67 = $c4;
     }
 
 
@@ -1048,6 +1121,29 @@
               <option value="TECHO O CUBIERTA">TECHO O CUBIERTA</option>
               <option value="PISO">PISO</option>
             </select></td>
+        </tr>
+
+        <tr>
+          <td colspan="4">
+            <div class='alert alert-secondary'>
+              <H5>CARACTERIZACION DE LA SOLICITUD</H5>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <th bgcolor="#CD6155">Subtipo de base de datos a asignar</th>
+          <td bgcolor="#CD6155" colspan="3">
+            <select class="form-control" name="sub_base" id="sub_base">
+              <?php if ($base == 7) echo "<option value='MEU' selected='selected'>MEJORAMIENTO URBANO</option>"; ?>
+              <?php if ($base == 7) echo "<option value='MER'>MEJORAMIENTO RURAL</option>"; ?>
+              <?php if ($base == 3) echo "<option value='DES'>CONDICION DESPLAZADO</option>"; ?>
+              <?php if ($base == 3) echo "<option value='SIP'>CONSTRUCCION EN SITIO PROPIO</option>"; ?>
+              <?php if ($base == 3) echo "<option value='REU'>REUBICACION</option>"; ?>
+              <?php if ($base == 3) echo "<option value='VIP'>VIVIENDA PRIORITARIA VIP</option>"; ?>
+              <?php if ($base == 3) echo "<option value='NA' selected='selected'>NINGUNA DE LAS ANTERIORES</option>"; ?>
+            </select>
+            <br>* RECUERDE Clasificar la ficha en la categoria segun corresponda ( Rural, Urbano, Desplazado, Etc...)</td>
         </tr>
 
         <tr>
