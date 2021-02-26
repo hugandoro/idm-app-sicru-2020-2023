@@ -12,7 +12,7 @@
     <meta name="generator" content="SICRU - IDM">
     <meta name="keywords" content="IDM, SICRU, Dosquebradas">
 
-    <title>IDM | SICRU</title>
+    <title>IDM | BIEN</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
