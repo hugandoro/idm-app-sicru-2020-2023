@@ -86,7 +86,7 @@
 
                         <div class="col-1"></div>
                         <div class="col-10" align="center">
-                            <div style="font-size: 36pt;color: #000000;"><b>Te damos la bienvenida a SICRU</b></div>
+                            <div style="font-size: 36pt;color: #000000;"><b>Con el IDM todos estamos BIEN</b></div>
                         </div>
                         <div class="col-1"></div>
 
@@ -94,7 +94,7 @@
 
                         <div class="col-2"></div>
                         <div class="col-8" align="center">
-                            <div style="font-size: 14pt; color: #000000;">Base de datos oficial del Instituto de Desarrollo Municipal de Dosquebradas para la identificación de potenciales beneficiarios<hr></div>
+                            <div style="font-size: 14pt; color: #000000;">Base Institucional Estadistica Normativa<hr></div>
                         </div>
                         <div class="col-2"></div>
 

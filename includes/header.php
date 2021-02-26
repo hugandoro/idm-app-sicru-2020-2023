@@ -16,13 +16,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta name="application-name" content="SICRU - Instituto de Desarrollo Municipal - Dosquebradas">
-    <meta name="author" content="Instituto de Desarrollo Municipal - IDM">
-    <meta name="description" content="SICRU">
-    <meta name="generator" content="SICRU - IDM">
-    <meta name="keywords" content="IDM, SICRU, Dosquebradas">
+    <meta name="application-name" content="BIEN - Instituto de Desarrollo Municipal - Dosquebradas">
+    <meta name="author" content="Instituto de Desarrollo Municipal - BIEN">
+    <meta name="description" content="BIEN">
+    <meta name="generator" content="BIEN - IDM">
+    <meta name="keywords" content="IDM, BIEN, Dosquebradas">
 
-    <title>IDM | SICRU</title>
+    <title>IDM | BIEN</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">

@@ -1101,7 +1101,6 @@
               <?php if ($base == 7) echo "<option value='MER'>MEJORAMIENTO RURAL</option>"; ?>
               <?php if ($base == 3) echo "<option value='DES'>CONDICION DESPLAZADO</option>"; ?>
               <?php if ($base == 3) echo "<option value='SIP'>CONSTRUCCION EN SITIO PROPIO</option>"; ?>
-              <?php if ($base == 3) echo "<option value='REU'>REUBICACION</option>"; ?>
               <?php if ($base == 3) echo "<option value='VIP'>VIVIENDA PRIORITARIA VIP</option>"; ?>
               <?php if ($base == 3) echo "<option value='NA' selected='selected'>VIVIENDA DE INTERES SOCIAL VIS</option>"; ?>
             </select>
