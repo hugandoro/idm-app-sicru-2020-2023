@@ -60,7 +60,7 @@
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark fixed-top" style="background:#ffffffBF;">
             <div class="container">
                 <b style="color:#444444;">
-                    <h6>INSTITUTO DE DESARROLLO MUNICIPAL - IDM .:: Dosquebradas 2020 - 2023</h6>
+                    <h6></h6>
                 </b>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -79,14 +79,14 @@
 
             <div>
 
-                <div style="padding: 11% 0;">
+                <div style="padding: 6% 0;">
 
                     <div class="row">
-                        <div class="col-12"><br><br><br><br><br></div>
+                        <div class="col-12"></div>
 
                         <div class="col-1"></div>
                         <div class="col-10" align="center">
-                            <div style="font-size: 36pt;color: #000000;"><b>Bienvenido a la plataforma SICRU</b></div>
+                            <div style="font-size: 36pt;color: #000000;"><b>Te damos la bienvenida a SICRU</b></div>
                         </div>
                         <div class="col-1"></div>
 
@@ -94,7 +94,7 @@
 
                         <div class="col-2"></div>
                         <div class="col-8" align="center">
-                            <div style="font-size: 14pt; color: #000000;">Base de datos oficial del Instituto de Desarrollo Municipal de Dosquebradas para identificación de potenciales beneficiarios<hr></div>
+                            <div style="font-size: 14pt; color: #000000;">Base de datos oficial del Instituto de Desarrollo Municipal de Dosquebradas para la identificación de potenciales beneficiarios<hr></div>
                         </div>
                         <div class="col-2"></div>
 
@@ -102,10 +102,10 @@
 
                         <div class="col-3"></div>
                         <div class="col-3">
-                            <a href="ciudadano_buscar_ac.php"><button type="submit" class="btn btn-lg btn-success"><span class="fa fa-search"></span> Consulta</button></a>
+                            <a href="ciudadano_buscar_ac.php"><button type="submit" class="btn btn-lg btn-success"><span class="fa fa-search"></span> Consultar</button></a>
                         </div>
                         <div class="col-3">
-                            <a href="#"><button type="submit" class="btn btn-lg btn-success"><span class="fa fa-file"></span> Preinscribete</button></a>
+                            <a href="ciudadano_inscribir_en_linea.php"><button type="submit" class="btn btn-lg btn-success"><span class="fa fa-file"></span> Inscribirme</button></a>
                         </div>
                         <div class="col-3"></div>
                     </div>
@@ -114,6 +114,25 @@
             </div>
 
         </header>
-    </div>
-</body>
 
+        <footer>
+            <div class="row">
+                <div class="col-5 col-md"></div>
+                <div class="col-2 col-md">
+                    <center><img src="imagenes/logotipo_pie.png" alt="" height="100 px"></center>
+                </div>
+                <div class="col-5 col-md"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-md">
+                    <center>
+                        <small class="d-block mb-3 text-muted">Instituto de Desarrollo Municipal | IDM | &copy; 2020-2023</small>
+                    </center>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="https://widget.flowxo.com/embed.js" data-fxo-widget="eyJ0aGVtZSI6IiMzMjNhNDYiLCJ3ZWIiOnsiYm90SWQiOiI2MDM0NzBhNmY4NjU5MDAwNGQ0N2FkNGUiLCJ0aGVtZSI6IiMzMjNhNDYiLCJsYWJlbCI6IkNvbnZlcnNhIGNvbiBub3NvdHJvcy4uLiJ9LCJ3ZWxjb21lVGV4dCI6IlNhbHVkb3MsIGJpZW52ZW5pZG8gYWwgSW5zdGl0dXRvIGRlIERlc2Fycm9sbG8gTXVuaWNpcGFsIGRlIERvc3F1ZWJyYWRhcyAoUmlzYXJhbGRhKSJ9" async defer></script>

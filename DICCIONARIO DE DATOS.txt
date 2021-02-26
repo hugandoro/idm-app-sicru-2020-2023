@@ -1,18 +1,48 @@
-Niveles de acceso
+NIVELES DE ACCESO
 1 - Consulta
 2 - Consulta | Edicion
 3 - Consulta | Edicion | Ingreso
 4 - Consulta | Edicion | Ingreso- Borrar
 
-Niveles de estado cuentas de usuario
+------------------------------------------
+
+ESTADOS CUENTAS DE USUARIOS
 0 - Estado inactivo
 1 - Estado activo
 
-Codigos Bases de datos
-BASE 0 - REU - Reubicados
-BASE 1 - MU - Mejoramiento urbano
-BASE 2 - MR - Mejoramiento rural
-BASE 3 - VIS - Vivienda de interes social
-BASE 4 - VIP - Vivienda de interes prioritario
-BASE 5 - DES - Desplazado
-BASE 6 - SP  - Sitio propio
+------------------------------------------
+
+CODIGOS BASES DE DATOS
+Categorias BASE
+BASE 3 - VIS - VIVIENDA NUEVA       (id_base)
+BASE 7 - MEJ - MEJORAMIENTO         (id_base)
+
+Subcategorias 
+BASE 0 - REU    - Reubicados                        (por_reubicar)
+BASE 1 - MU     - Mejoramiento urbano               (mejora_urbana)
+BASE 2 - MR     - Mejoramiento rural                (mejora_rural)
+BASE 4 - VIP    - Vivienda de interes prioritario   (vivienda_prioritara)
+BASE 5 - DES    - Desplazado                        (condicion_desplazado)
+BASE 6 - SP     - Sitio propio                      (tiene_sitio_propio)
+
+------------------------------------------
+
+CONVOCATORIAS
+Estado 1 - Abierta
+Estado 2 - Cerrada (Estados de los postulados pendientes por definir - En proceso)
+Estado 0 - Archivada (Estados de los postulados definidos)
+
+CONVOCATORIAS - CIUDADANOS
+Estado 0 - Archivado
+Estado 1 - Postulado
+
+CONVOCATORIAS - CIUDADANOS
+Resultado 0 - Negado
+Resultado 1 - Asignado
+
+COMBINACIONES PARA CONVOCATORIAS - CIUDADANOS ( Estado y Resultado )
+0 y 0 - Archivado definido como Negado
+0 y 1 - Archivado definido como Asignado
+1 y 1 - Postulado actualmente preseleccionado
+1 y 0 - Postulado actualmente NO preseleccionado
+

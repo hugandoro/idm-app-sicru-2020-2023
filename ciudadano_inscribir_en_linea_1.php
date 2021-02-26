@@ -99,6 +99,14 @@ $aux = $vis + $mejora;
 			echo "<TD>$subbase</TD>";
 			echo "</TR>";
 			echo "</TABLE>";
+			//*************************************************************************		
+
+			echo "<br><center><div class='alert alert-success ' role='alert'>
+  					<b><h5>BUENAS NOTICIAS</h5></b>Ud ya se encuentra registrado en nuestra base de datos<br><br>
+					Para cambio de base (vivienda o mejoramiento), actualizar datos o modificar miembros del grupo familiar<br>
+					Por favor comunicarse a cualquiera de los siguientes N° telefonicos
+					Teléfonos | 57(6) 322 8821 | 57(6) 322 5085 Ext 113
+				</div></center>";
 		}
 
 		//***********************************************************************	
@@ -107,16 +115,38 @@ $aux = $vis + $mejora;
 		$resultadoFAM = mysqli_query($sle, $sqlFAM) or die(mysqli_error());
 		while ($rowFAM = mysqli_fetch_row($resultadoFAM)) {
 			echo "<br><center><h5>Vinculado como miembro del grupo familiar para la ficha del postulado...</h5><br>";
-			echo "<h3>" . $rowFAM[0] . " - " . $rowFAM[3] . " " . $rowFAM[4] . " " . $rowFAM[5] . " " . $rowFAM[6] . "</h3><br><br></center>";
+			echo "<h3>" . $rowFAM[0] . " - " . $rowFAM[3] . " " . $rowFAM[4] . " " . $rowFAM[5] . " " . $rowFAM[6] . "</h3><br></center>";
 			$aux++;
+
+			echo "<br><center><div class='alert alert-danger' role='alert'>
+  					No es posible continuar con el proceso de inscripcion en linea<br>
+					El titular de la ficha de registro debe actualizar datos y desvincularl@ de su grupo familiar para que pueda proceder con el proceso de inscripcion a nombre propio.<br><br>
+					Para mas informacion<br>
+					Teléfonos | 57(6) 322 8821 | 57(6) 322 5085 Ext 113
+				</div></center>";
 		}
 
+
+		//validado que el N° de identificacion NO TIENE NOVEDAD por no estar inscrito o perteneciente a un grupo familiar
+		//Permite continuar con la inscripcion en linea...
 		if ($aux == 0) {
-			echo "<br><center><h5>No existe ficha registrada con este N° de cedula</h5><br><h3><b>$cedula</b></h3><br><br></center>";
+			echo "<br><center><h5>Se esta iniciando un proceso de incripcion en linea para el documento N°</h5><br><h3><b>$cedula</b></h3><br></center>";
+
+			echo "<form id='form1' name='form1' method='POST' action='ciudadano_inscribir_en_linea_2.php'>
+			  <input type='hidden' name='cedula' id='cedula' type='number' value='$cedula'>
+			  <br><button type='submit' class='btn btn-success btn-block'> Continuar | Paso N° 2...  </button>
+		  	</form>";
 		}
+		//***********************************************************************
 
 
-		echo "<BR><a href='index.php'><input type='submit' name='Volver' id='Volver' value='Volver a la ventana anterior...' class='btn btn-success btn-block'/></a>";
+		//Validado que el N° de identificacion presenta UNA NOVEDAD
+		//Le informa al usuario y solo permite volver al menu principal de consulta
+		if ($aux != 0) {
+			echo "<br><br><a href='index.php'><input type='submit' name='Volver' id='Volver' value='Volver a la ventana anterior...' class='btn btn-success btn-block'/></a>";
+		}
+		//***********************************************************************
+
 		?>
 
 	</aside>

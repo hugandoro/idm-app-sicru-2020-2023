@@ -12,7 +12,7 @@
             <div class="row">
                 <div class="col-12 col-md">
                     <center>
-                        <small class="d-block mb-3 text-muted">Instituo de Desarrollo Municipal | IDM</small>
+                        <small class="d-block mb-3 text-muted">Instituto de Desarrollo Municipal | IDM</small>
                         <small class="d-block mb-3 text-muted">&copy; 2020-2023</small>
                     </center>
                 </div>
