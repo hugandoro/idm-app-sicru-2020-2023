@@ -35,8 +35,10 @@
         }
 
         .portada {
-            background: url(https://www.publicdomainpictures.net/pictures/30000/velka/yellow-green-blur-background.jpg) no-repeat fixed center;
-            /* background: url(https://consultorsalud.com/wp-content/uploads/2020/02/poblacion-colombiana-actualidad-consultorsalud.jpg) no-repeat fixed center; */
+            /* background: url(https://www.publicdomainpictures.net/pictures/30000/velka/yellow-green-blur-background.jpg) no-repeat fixed center; */
+            /* background: url(https://img.freepik.com/free-photo/yellow-empty-house-yellow-background-abstract-image-3d-render_187882-533.jpg?size=626&ext=jpg) no-repeat fixed center; */
+            /* background: url(https://img.freepik.com/free-photo/yellow-empty-house-yellow-background-abstract-image-3d-render_187882-533.jpg?size=626&ext=jpg) no-repeat fixed center; */
+            background: url(imagenes/fondo4.jpg) no-repeat fixed center;
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;
@@ -86,28 +88,31 @@
 
                         <div class="col-1"></div>
                         <div class="col-10" align="center">
-                            <div style="font-size: 36pt;color: #000000;"><b>Con el IDM todos estamos BIEN</b></div>
+                            <div style="font-size: 32pt;color: #000000;"><b>Con el IDM todos estamos BIEN</b></div>
                         </div>
                         <div class="col-1"></div>
 
-                        <div class="col-12"><br><br></div>
+                        <div class="col-12"><br></div>
 
                         <div class="col-2"></div>
                         <div class="col-8" align="center">
-                            <div style="font-size: 14pt; color: #000000;">Base Institucional Estadistica Normativa<hr></div>
+                            <div style="font-size: 16pt; color: #000000;">Base Institucional Estadistica Normativa</div>
                         </div>
                         <div class="col-2"></div>
 
-                        <div class="col-12"><br><br></div>
+                        <div class="col-12"><br></div>
 
-                        <div class="col-3"></div>
-                        <div class="col-3">
-                            <a href="ciudadano_buscar_ac.php"><button type="submit" class="btn btn-lg btn-success"><span class="fa fa-search"></span> Consultar</button></a>
+                        <div class="col-md-3 col-xs-12"></div>
+                        <div class="col-md-3 col-xs-12">
+                            <a href="ciudadano_buscar_ac.php"><button type="submit" class="btn btn-lg btn-success"><span class="fa fa-search"></span> Consultar</button></a><br><br>
                         </div>
-                        <div class="col-3">
+                        <div class="col-md-3 col-xs-12">
                             <a href="ciudadano_inscribir_en_linea.php"><button type="submit" class="btn btn-lg btn-success"><span class="fa fa-file"></span> Inscribirme</button></a>
                         </div>
-                        <div class="col-3"></div>
+                        <div class="col-md-3 col-xs-12"></div>
+
+                        <div class="col-md-6 col-xs-12"><hr><img src="imagenes/Post_Subsidio.jpg" alt="" width="100%"><hr></div>
+                        <div class="col-md-6 col-xs-12"><hr><img src="imagenes/Subsidio_01.jpg" alt="" width="100%"><hr></div>
                     </div>
                 </div>
 
@@ -117,11 +122,9 @@
 
         <footer>
             <div class="row">
-                <div class="col-5 col-md"></div>
-                <div class="col-2 col-md">
-                    <center><img src="imagenes/logotipo_pie.png" alt="" height="100 px"></center>
+                <div class="col-12 col-md">
+                    <center><img src="imagenes/logotipo_pie.png" alt="" width="150px"></center>
                 </div>
-                <div class="col-5 col-md"></div>
             </div>
 
             <div class="row">
