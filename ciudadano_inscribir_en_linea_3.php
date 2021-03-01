@@ -703,7 +703,7 @@
 <div class="row">
   <aside class="col-sm-12">
 
-    <form name="form1" method="post" onsubmit="return noespacios(<?php echo $base; ?>)" action="ciudadano_inscribir_en_linea_4">
+    <form name="form1" method="post" onsubmit="return noespacios(<?php echo $base; ?>)" action="ciudadano_inscribir_en_linea_4.php">
       <table class="table table-bordered">
 
         <tr>
