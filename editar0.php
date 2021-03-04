@@ -164,6 +164,7 @@
               <option value="DESPLAZADOS">DESPLAZADOS</option>
               <option value="RED UNIDOS">RED UNIDOS</option>
               <option value="SISBEN">SISBEN</option>
+              <option value="SITUACION DE DISCAPACIDAD">SITUACION DE DISCAPACIDAD</option>
               <option value="CABEZA DE HOGAR">CABEZA DE HOGAR</option>
               <option value="ZONA DE ALTO RIESGO">ZONA DE ALTO RIESGO</option>
               <option value="VICTIMA DE LA VIOLENCIA">VICTIMA DE LA VIOLENCIA</option>
@@ -596,6 +597,66 @@
           <td>&nbsp;</td>
           <td>&nbsp;</td>
         </tr>
+
+        <!-- Seccion para CAMBIO DE BASE y SUBASE -->
+        <tr>
+          <th bgcolor="#CD6155">Reasignar ficha a otra base de dato</th>
+          <td bgcolor="#CD6155" colspan="3">
+            <select class="form-control" name="base_sub_base" id="base_sub_base">
+              <?php  
+                if ($row['85'] == 'SI') 
+                  echo "<option value='MEU' selected='selected'>MEJORAMIENTO | Mejoramiento urbano (Actualmente)</option>"; 
+                else
+                  echo "<option value='MEU'>MEJORAMIENTO | Mejoramiento urbano</option>"; 
+              ?>
+
+              <?php 
+                if ($row['86'] == 'SI') 
+                  echo "<option value='MER' selected='selected'>MEJORAMIENTO | Mejoramiento rural (Actualmente)</option>"; 
+                else
+                  echo "<option value='MER'>MEJORAMIENTO | Mejoramiento rural</option>"; 
+              ?>
+
+              <?php 
+                if ($row['87'] == 'SI') 
+                  echo "<option value='VIP' selected='selected'>VIVIENDA NUEVA | Vivienda prioritaria VIP (Actualmente)</option>"; 
+                else
+                  echo "<option value='VIP'>VIVIENDA NUEVA | Vivienda prioritaria VIP</option>"; 
+              ?>
+
+              <?php 
+                if ($row['88'] == 'SI') 
+                  echo "<option value='DES' selected='selected'>VIVIENDA NUEVA | Condicion desplazado (Actualmente)</option>"; 
+                else
+                  echo "<option value='DES'>VIVIENDA NUEVA | Condicion desplazado</option>"; 
+              ?>
+
+              <?php 
+                if ($row['89'] == 'SI') 
+                  echo "<option value='SIP' selected='selected'>VIVIENDA NUEVA | Construccion en sitio propio (Actualmente)</option>"; 
+                else
+                  echo "<option value='SIP'>VIVIENDA NUEVA | Construccion en sitio propio</option>"; 
+              ?>
+
+              <?php 
+                if ($row['84'] == 'SI') 
+                  echo "<option value='REU' selected='selected'>VIVIENDA NUEVA | Reubicacion (Actualmente)</option>"; 
+                else
+                  echo "<option value='REU'>VIVIENDA NUEVA | Reubicacion</option>"; 
+              ?>
+
+              <?php 
+                if (($row['84'] == 'NO') && ($row['85'] == 'NO') && ($row['86'] == 'NO') && ($row['87'] == 'NO') && ($row['88'] == 'NO') && ($row['89'] == 'NO'))
+                  echo "<option value='NA' selected='selected'> VIVIENDA NUEVA | Vivienda de interes social VIS (Actualmente)</option>"; 
+                else
+                  echo "<option value='NA'> VIVIENDA NUEVA | Vivienda de interes social VIS</option>"; 
+              ?>
+            </select>
+
+            <br>* En caso de NO necesitar reasignar, dejar este campo sin modificar...</td>
+        </tr>
+        <!-- Fin de la seccion cambio de base ****************-->
+
         <tr>
           <td>&nbsp;</td>
           <td><input type="hidden" name="base" id="base" <?php echo "value=" . $base ?> /></td>

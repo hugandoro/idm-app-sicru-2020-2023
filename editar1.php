@@ -10,6 +10,8 @@
 		<p>
 			<?php
 			$base =	$_POST['base'];
+			$base_sub_base = $_POST['base_sub_base']; //Codigo que permite identificar si se solicito CAMBIO DE BASE
+
 
 			$paso = 0;
 			if (($base == 0) && ($_SESSION["REU"] >= "2")) $paso = 1;
@@ -126,8 +128,47 @@
 
 			//PROCEDEMOS A INGRESAR EL NUEVO REGISTRO SEGUN LA BASE SELECCIONADA
 			$sql = "UPDATE ciudadanos SET situacion_actual='$situacion', parentesco='$parentesco', nombre1='$nombre1', nombre2='$nombre2', apellido1='$apellido1', apellido2='$apellido2', edad='$edad', direccion='$direccion', barrio='$barrio', comuna='$comuna', zona='$zona', fijo='$fijo', celular='$celular', observaciones='$observaciones', fecha='$fecha', tipo_evento='$tipoevento', familiar1='$familiar1', familiar2='$familiar2', familiar3='$familiar3', familiar4='$familiar4', familiar5='$familiar5', familiar6='$familiar6', familiar7='$familiar7', familiar8='$familiar8', familiar9='$familiar9', familiar10='$familiar10', email='$email', inmueble_actual='$inmueble_actual', inmueble_titulo='$inmueble_titulo', inmueble_tiempo='$inmueble_tiempo', inmueble_material='$inmueble_material', zona_riesgo='$zona_riesgo', cantidad_gf='$cantidad_gf', madre_ch='$madre_ch', poblacion_depe='$poblacion_depe', grupo_etnico='$grupo_etnico', encuestado_tel='$encuestado_tel', encuestado_per='$encuestado_per', visitado='$visitado', situacion_laboral='$laboral', fecha_actualizacion='$fecha_actualizacion', edad1='$edad1', edad2='$edad2', edad3='$edad3', edad4='$edad4', edad5='$edad5', edad6='$edad6', edad7='$edad7', edad8='$edad8', edad9='$edad9', edad10='$edad10', matricula_inmobiliaria='$inmueble_matricula', ficha_catastro='$inmueble_catastral', numero_escritura='$inmueble_escritura', servicios_publicos='$inmueble_servicios', radicado='$radicado', ente_radicado='$ente_remite', doc_fami1='$docu1', doc_fami2='$docu2', doc_fami3='$docu3', doc_fami4='$docu4', doc_fami5='$docu5', doc_fami6='$docu6', doc_fami7='$docu7', doc_fami8='$docu8', doc_fami9='$docu9', doc_fami10='$docu10', preaprobado='$preaprobadovalor', preaprobado_entidad='$preaprobadoentidad', cesantias='$cesantiasvalor', cesantias_entidad='$cesantiasentidad', valor_ahorrado='$valorahorrado', entidad='$entidad', num_cuenta='$numcuenta', fecha_retiro='$retiro', tipo_mejoramiento='$inmueble_solicitud' WHERE cedula = '$cedula'";
+			mysqli_query($sle, $sql) or die("Problemas al modificar" . mysqli_error($sle));
+			// FIN actualizacion datos *****************************************
 
-			mysqli_query($sle, $sql) or die("Problemas al insertar" . mysqli_error($sle));
+
+			//Identifica si se solicito un CAMBIO DE BASE y procese a actualizar
+			$sub_base_nueva_meu = 'NO';
+			$sub_base_nueva_mer = 'NO';
+			$sub_base_nueva_vip = 'NO';
+			$sub_base_nueva_des = 'NO';
+			$sub_base_nueva_sip = 'NO';
+			$sub_base_nueva_reu = 'NO';
+
+			if ($base_sub_base == 'MEU') $base_nueva = 7;
+			if ($base_sub_base == 'MER') $base_nueva = 7;
+			if ($base_sub_base == 'VIP') $base_nueva = 3;
+			if ($base_sub_base == 'DES') $base_nueva = 3;
+			if ($base_sub_base == 'SIP') $base_nueva = 3;
+			if ($base_sub_base == 'REU') $base_nueva = 3;
+			if ($base_sub_base == 'NA') $base_nueva = 3; //Si es NA es porque no tiene sub base por lo tanto es VIS
+
+			if ($base_sub_base == 'MEU') $sub_base_nueva_meu = 'SI';
+			if ($base_sub_base == 'MER') $sub_base_nueva_mer = 'SI';
+			if ($base_sub_base == 'VIP') $sub_base_nueva_vip = 'SI';
+			if ($base_sub_base == 'DES') $sub_base_nueva_des = 'SI';
+			if ($base_sub_base == 'SIP') $sub_base_nueva_sip = 'SI';
+			if ($base_sub_base == 'REU') $sub_base_nueva_reu = 'SI'; // Si no entra en ninguna condicion todos quedan en NO por lo tanto la categoria seria VIS
+
+
+			$sql = "UPDATE ciudadanos SET id_base = '$base_nueva',
+										por_reubicar = '$sub_base_nueva_reu', 
+										mejora_urbana = '$sub_base_nueva_meu', 
+										mejora_rural = '$sub_base_nueva_mer', 
+										vivienda_prioritaria = '$sub_base_nueva_vip', 
+										condicion_desplazado = '$sub_base_nueva_des', 
+										tiene_sitio_propio = '$sub_base_nueva_sip'  
+										WHERE cedula = '$cedula'";
+
+			mysqli_query($sle, $sql) or die("Problemas al ajustar cambio de base de datos" . mysqli_error($sle));
+			// FIN actualizacion cambio de base de datos **********************
+
+
 			echo "<div class='alert alert-success'><center>Registro del ciudadano actualizado exitosamente</center></div><br>";
 
 			//Registra el EVENTO EN EL LOG

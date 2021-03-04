@@ -729,6 +729,7 @@
               <option value="DESPLAZADOS">DESPLAZADOS</option>
               <option value="RED UNIDOS">RED UNIDOS</option>
               <option value="SISBEN">SISBEN</option>
+              <option value="SITUACION DE DISCAPACIDAD">SITUACION DE DISCAPACIDAD</option>
               <option value="CABEZA DE HOGAR">CABEZA DE HOGAR</option>
               <option value="ZONA DE ALTO RIESGO">ZONA DE ALTO RIESGO</option>
               <option value="VICTIMA DE LA VIOLENCIA">VICTIMA DE LA VIOLENCIA</option>

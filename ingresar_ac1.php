@@ -767,6 +767,7 @@
               <option value="DESPLAZADOS">DESPLAZADOS</option>
               <option value="RED UNIDOS">RED UNIDOS</option>
               <option value="SISBEN">SISBEN</option>
+              <option value="SITUACION DE DISCAPACIDAD">SITUACION DE DISCAPACIDAD</option>
               <option value="CABEZA DE HOGAR">CABEZA DE HOGAR</option>
               <option value="ZONA DE ALTO RIESGO">ZONA DE ALTO RIESGO</option>
               <option value="VICTIMA DE LA VIOLENCIA">VICTIMA DE LA VIOLENCIA</option>
@@ -1141,7 +1142,7 @@
               <?php if ($base == 3) echo "<option value='SIP'>CONSTRUCCION EN SITIO PROPIO</option>"; ?>
               <?php if ($base == 3) echo "<option value='REU'>REUBICACION</option>"; ?>
               <?php if ($base == 3) echo "<option value='VIP'>VIVIENDA PRIORITARIA VIP</option>"; ?>
-              <?php if ($base == 3) echo "<option value='NA' selected='selected'>NINGUNA DE LAS ANTERIORES</option>"; ?>
+              <?php if ($base == 3) echo "<option value='NA' selected='selected'>VIVIENDA DE INTERES SOCIAL - VIS</option>"; ?>
             </select>
             <br>* RECUERDE Clasificar la ficha en la categoria segun corresponda ( Rural, Urbano, Desplazado, Etc...)</td>
         </tr>
