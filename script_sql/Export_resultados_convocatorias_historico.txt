@@ -1,0 +1,19 @@
+Exportar resultados de las convocatorias historicas
+---------------------------------------------------
+
+SELECT 
+b.nombre_corto as proyecto, 
+c.cedula as cedula, 
+c.nombre1 as nombre_1, 
+c.apellido1 as apellido_1, 
+
+IF(a.estado = 0, "Archivada", "En postulacion") as estado_convocatoria,
+IF(a.resultado = 0, "Negada", "Asignado") as resultado_postulacion
+
+FROM convocatorias_ciudadanos AS a 
+
+INNER JOIN convocatorias AS b 
+ON a.id_proyecto = b.id_proyecto 
+
+INNER JOIN ciudadanos AS c 
+ON a.cedula = c.cedula

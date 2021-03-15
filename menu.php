@@ -35,7 +35,7 @@
         <img class="card-img-top" src="imagenes/icono_4.png" alt="Card image cap" style="border-radius: 0%;">
         <div class="card-footer" style="text-align: center;">
           <?php if ($_SESSION["nivel"] == "2") { ?>
-            <!-- <a href="convocatorias.php"><button type='submit' class='btn btn-outline-success btn-sm btn-block'>Convocatorias</button></a> -->
+            <a href="convocatorias.php"><button type='submit' class='btn btn-outline-success btn-sm btn-block'>Convocatorias</button></a>
           <?php } ?>
         </div>
       </div>
