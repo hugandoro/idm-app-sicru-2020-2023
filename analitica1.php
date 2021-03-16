@@ -4,6 +4,14 @@
 
 <!-- Calcula datos estadisticos para graficar -->
 <?php
+$sql = "SELECT * FROM ciudadanos WHERE tipo_inscripcion = 'PRESENCIAL'";
+$resultado = mysqli_query($sle, $sql) or die(mysqli_error());
+$presencial = mysqli_num_rows($resultado);
+
+$sql = "SELECT * FROM ciudadanos WHERE tipo_inscripcion = 'WEB'";
+$resultado = mysqli_query($sle, $sql) or die(mysqli_error());
+$web = mysqli_num_rows($resultado);
+
 $sql = "SELECT * FROM ciudadanos WHERE id_base = 0";
 $resultado = mysqli_query($sle, $sql) or die(mysqli_error());
 $reb = mysqli_num_rows($resultado);
@@ -52,11 +60,19 @@ $mejora_por = ($mejora * 100) / $total;
 <div class="row">
 
   <div class="col-md-12">
-    <canvas id="myChart" width="200" height="100"></canvas>
+    <canvas id="myChart" width="200" height="100"></canvas> <!-- Personas inscritas -->
+    <br>
+    <hr>
+    <br>
   </div>
 
   <div class="col-md-12">
-    <br><hr>
+    <canvas id="myChart2" width="200" height="100"></canvas> <!-- Origen de la inscripcion -->
+  </div>
+
+  <div class="col-md-12">
+    <br>
+    <hr>
     <a href='menu.php'>
       <input name='Volver2' type='submit' class='btn btn-success btn-block' id='Volver2' value='Volver a la ventana anterior...' />
     </a>
@@ -65,28 +81,86 @@ $mejora_por = ($mejora * 100) / $total;
 </div>
 
 
-<!-- JS que prepara el entorno para GRAFICAR -->
+<!-- JS que prepara el entorno para GRAFICAR PERSONAS INSCRITAS -->
 <script>
   var ctx = document.getElementById('myChart').getContext('2d');
   var myChart = new Chart(ctx, {
-    type: 'bar',
+    type: 'doughnut',
     data: {
       labels: ['Vivienda Nueva', 'Mejoramiento'],
       datasets: [{
         label: 'Personas registradas',
         data: ["<?php echo $vis; ?>", "<?php echo $mejora; ?>"],
         backgroundColor: [
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(54, 162, 235, 0.2)'
+          'rgba(89, 165, 127, 1)',
+          'rgba(196, 194, 88, 1)'
         ],
         borderColor: [
-          'rgba(255, 99, 132, 1)',
-          'rgba(54, 162, 235, 1)'
+          'rgba(89, 165, 127, 1)',
+          'rgba(196, 194, 88, 1)'
         ],
         borderWidth: 1
       }]
     },
     options: {
+      responsive: true,
+      legend: {
+        position: 'top',
+      },
+      title: {
+        display: true,
+        text: 'Personas registradas'
+      },
+      animation: {
+        animateScale: true,
+        animateRotate: true
+      },
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      }
+    }
+  });
+</script>
+
+
+<!-- JS que prepara el entorno para GRAFICAR ORIGEN DE LA INSCRIPCION -->
+<script>
+  var ctx = document.getElementById('myChart2').getContext('2d');
+  var myChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: ['Presencial', 'Web'],
+      datasets: [{
+        label: 'Origen de las inscripciones',
+        data: ["<?php echo $presencial; ?>", "<?php echo $web; ?>"],
+        backgroundColor: [
+          'rgba(89, 165, 127, 1)',
+          'rgba(196, 194, 88, 1)'
+        ],
+        borderColor: [
+          'rgba(89, 165, 127, 1)',
+          'rgba(196, 194, 88, 1)'
+        ],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      legend: {
+        position: 'top',
+      },
+      title: {
+        display: true,
+        text: 'Origen de las inscripciones'
+      },
+      animation: {
+        animateScale: true,
+        animateRotate: true
+      },
       scales: {
         yAxes: [{
           ticks: {
