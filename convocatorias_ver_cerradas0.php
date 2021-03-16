@@ -11,16 +11,34 @@
     mysqli_select_db($sle, $database_sle);
     mysqli_query($sle, "SET NAMES 'utf8'");
 
-    $convocatoria = "NA";
-    if (isset($_GET['convocatoria']))
-      $convocatoria = $_GET['convocatoria'];
-    if ($convocatoria != "NA") {
-      $sqlAA = "UPDATE convocatorias SET estado ='0' WHERE id_proyecto = '$convocatoria'";
-      $resultAA = mysqli_query($sle, $sqlAA);
+    // En caso de recibir un requerimiento de ARCHIVAR CONVOCATORIA
+    if ($_SESSION["POSTULACION_ADMIN"] == "4") {
+      $convocatoria = "NA";
+      if (isset($_GET['convocatoria']))
+        $convocatoria = $_GET['convocatoria'];
+      if ($convocatoria != "NA") {
+        $sqlAA = "UPDATE convocatorias SET estado ='0' WHERE id_proyecto = '$convocatoria'";
+        $resultAA = mysqli_query($sle, $sqlAA);
 
-      $sqlCCI = "UPDATE convocatorias_ciudadanos SET estado = '0' WHERE id_proyecto = '$convocatoria'";
-      $resultCCI = mysqli_query($sle, $sqlCCI);
+        $sqlCCI = "UPDATE convocatorias_ciudadanos SET estado = '0' WHERE id_proyecto = '$convocatoria'";
+        $resultCCI = mysqli_query($sle, $sqlCCI);
+      }
     }
+    // Fin cierre convocatoria **********************************
+
+
+    // En caso de recibir un requerimiento de RE ABRIR CONVOCATORIA
+    if ($_SESSION["POSTULACION_ADMIN"] == "4") {
+      $convocatoriaReabrir = "NA";
+      if (isset($_GET['convocatoriaReabrir']))
+        $convocatoriaReabrir = $_GET['convocatoriaReabrir'];
+      if ($convocatoriaReabrir != "NA") {
+        $sqlAA = "UPDATE convocatorias SET estado ='1' WHERE id_proyecto = '$convocatoriaReabrir'";
+        $resultAA = mysqli_query($sle, $sqlAA);
+      }
+    }
+    // Fin cierre convocatoria **********************************
+
 
     echo "<center>LISTADO DE CONVOCATORIAS CERRADAS<BR><BR>";
     ?>

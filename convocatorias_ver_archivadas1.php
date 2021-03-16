@@ -2,6 +2,14 @@
 <?php include("includes/title.php"); ?>
 <?php include("includes/login_valid_session.php"); ?>
 
+<script type="text/javascript">
+	//VALIDA ANTES DE ELIMINAR
+	function confirmar(texto) {
+		if (confirm(texto)) return true;
+		else return false;
+	}
+</script>
+
 <div class="row">
 	<aside class="col-sm-12">
 
@@ -24,7 +32,7 @@
 		echo "<table class='table'>";
 		echo "<thead class='thead-dark'>";
 		echo "<TR>";
-		echo "<TH width='5%'><B></B></TH>";
+		echo "<TH width='5%'><B>Resultado</B></TH>";
 		echo "<TH width='5%'><B>Cedula</B></TH>";
 		echo "<TH width='10%'><B>Nombre 1</B></TH>";
 		echo "<TH width='10%'><B>Nombre 2</B></TH>";
@@ -44,9 +52,9 @@
 			echo "<TR>";
 
 			if ($rowCC[5] == "0")
-				echo "<TD><img src='imagenes/negado.png' width='20' height='20' alt='Modificar Postulacion' /></TD>";
+				echo "<TD><div class='alert alert-danger'>Negado</div></TD>";
 			if ($rowCC[5] == "1")
-				echo "<TD><img src='imagenes/aprobado.png' width='20' height='20' alt='Modificar Postulacion' /></TD>";
+				echo "<TD><div class='alert alert-success'>Aprobado</div></TD>";
 
 			echo "<TD>$rowCI[0]</TD>";
 			echo "<TD>$rowCI[3]</TD>";
@@ -63,7 +71,16 @@
 		?>
 
 		<?php
-		echo "<HR><a href='convocatorias.php'><input type='submit' name='Volver' id='Volver' value='Volver a la ventana anterior...' class='btn btn-info btn-block'/></a>";
+		if ($_SESSION["POSTULACION_ADMIN"] == "4") { 
+		?>
+			<a href='convocatorias_ver_archivadas0.php?convocatoriaDesarchivar=<?php echo $convocatoria; ?>' onclick="return confirmar('Desarchivar - ESTA SEGURO DE LA ACCION ?')">
+				<input name='desarchivar' type='submit' class="btn btn-warning btn-block" id='desarchivar' value='*** DES ARCHIVAR CONVOCATORIA ***' />
+			</a>
+
+		<?php
+		}
+
+		echo "<HR><a href='convocatorias.php'><input type='submit' name='Volver' id='Volver' value='Volver a la ventana anterior...' class='btn btn-success btn-block'/></a>";
 		?>
 
 	</aside>

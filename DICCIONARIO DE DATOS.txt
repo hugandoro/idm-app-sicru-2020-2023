@@ -2,7 +2,10 @@ NIVELES DE ACCESO
 1 - Consulta
 2 - Consulta | Edicion
 3 - Consulta | Edicion | Ingreso
-4 - Consulta | Edicion | Ingreso- Borrar
+4 - Consulta | Edicion | Ingreso | Borrar
+
+Columna POSTULACION define permisos para postular, depostular, aprovar y rechazar
+Columna POSTLACION_ADMIN define permisos para Cerrar, Reabrir, Archivar, Desarchivar una CONVOCATORIA
 
 ------------------------------------------
 

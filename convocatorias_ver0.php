@@ -13,12 +13,14 @@
 
 
     // En caso de recibir un requerimiento de CIERRE CONVOCATORIA
-    $convocatoria = "NA";
-    if (isset($_GET['convocatoria']))
-      $convocatoria = $_GET['convocatoria'];
-    if ($convocatoria != "NA") {
-      $sqlAA = "UPDATE convocatorias SET estado ='2' WHERE id_proyecto = '$convocatoria'";
-      $resultAA = mysqli_query($sle, $sqlAA);
+    if ($_SESSION["POSTULACION_ADMIN"] == "4") {
+      $convocatoria = "NA";
+      if (isset($_GET['convocatoria']))
+        $convocatoria = $_GET['convocatoria'];
+      if ($convocatoria != "NA") {
+        $sqlAA = "UPDATE convocatorias SET estado ='2' WHERE id_proyecto = '$convocatoria'";
+        $resultAA = mysqli_query($sle, $sqlAA);
+      }
     }
     // Fin cierre convocatoria **********************************
 

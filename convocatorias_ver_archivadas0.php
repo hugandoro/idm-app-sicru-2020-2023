@@ -11,6 +11,21 @@
     mysqli_select_db($sle, $database_sle);
     mysqli_query($sle, "SET NAMES 'utf8'");
 
+    // En caso de recibir un requerimiento de DESARCHIVAR CONVOCATORIA
+    if ($_SESSION["POSTULACION_ADMIN"] == "4") {
+      $convocatoriaDesarchivar = "NA";
+      if (isset($_GET['convocatoriaDesarchivar']))
+        $convocatoriaDesarchivar = $_GET['convocatoriaDesarchivar'];
+      if ($convocatoriaDesarchivar != "NA") {
+        $sqlAA = "UPDATE convocatorias SET estado ='2' WHERE id_proyecto = '$convocatoriaDesarchivar'";
+        $resultAA = mysqli_query($sle, $sqlAA);
+
+        $sqlCCI = "UPDATE convocatorias_ciudadanos SET estado = '1' WHERE id_proyecto = '$convocatoriaDesarchivar'";
+        $resultCCI = mysqli_query($sle, $sqlCCI);
+      }
+    }
+    // Fin cierre convocatoria **********************************
+
     echo "<center>LISTADO DE CONVOCATORIAS ARCHIVADAS<BR><BR>";
     ?>
     <form name="form1" method="post" onSubmit="return revisar(form1);" action="convocatorias_ver_archivadas1.php">

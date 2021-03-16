@@ -72,7 +72,7 @@
 		echo "<table class='table'>";
 		echo "<thead class='thead-dark'>";
 		echo "<TR>";
-		echo "<TH width='5%'><B></B></TH>";
+		echo "<TH width='5%'><B>Estado</B></TH>";
 		echo "<TH width='5%'><B>Cedula</B></TH>";
 		echo "<TH width='10%'><B>Nombre 1</B></TH>";
 		echo "<TH width='10%'><B>Nombre 2</B></TH>";
@@ -94,16 +94,15 @@
 			if ($_SESSION["POSTULACION"] == "4") {
 				if ($rowCC[5] == "0") {
 		?>
-					<TD><a href='convocatorias_ver_cerradas1.php?convocatoria=<?php echo $convocatoria; ?>&cedula=<?php echo $rowCI[0]; ?>&b=0' onclick='return confirmar("APROBAR beneficio, ESTA SEGURO DE LA ACCION ?")'><img src='imagenes/negado.png' width='20' height='20' alt='Modificar Postulacion' /></a></TD>
+					<TD><a href='convocatorias_ver_cerradas1.php?convocatoria=<?php echo $convocatoria; ?>&cedula=<?php echo $rowCI[0]; ?>&b=0' onclick='return confirmar("APROBAR beneficio, ESTA SEGURO DE LA ACCION ?")'><button type="button" class="btn btn-danger">Negado</button></a></TD>
 				<?php
 				}
 
 				if ($rowCC[5] == "1") {
 				?>
-					<TD><a href='convocatorias_ver_cerradas1.php?convocatoria=<?php echo $convocatoria; ?>&cedula=<?php echo $rowCI[0]; ?>&b=1' onclick='return confirmar("NEGAR beneficio, ESTA SEGURO DE LA ACCION ?")'><img src='imagenes/aprobado.png' width='20' height='20' alt='Modificar Postulacion' /></a></TD>
+					<TD><a href='convocatorias_ver_cerradas1.php?convocatoria=<?php echo $convocatoria; ?>&cedula=<?php echo $rowCI[0]; ?>&b=1' onclick='return confirmar("NEGAR beneficio, ESTA SEGURO DE LA ACCION ?")'><button type="button" class="btn btn-success">Aprobado</button></a></TD>
 		<?php
 				}
-
 			} else
 				echo "<TD></TD>";
 
@@ -122,14 +121,22 @@
 		?>
 
 		<?php
-		if ($_SESSION["POSTULACION"] == "4") {
+		if ($_SESSION["POSTULACION_ADMIN"] == "4") {
 		?>
-			<a href='convocatorias_ver_cerradas0.php?convocatoria=<?php echo $convocatoria; ?>' onclick="return confirmar('ALERTA !!! ¿Si archiva esta convocatoria no se podra modificar el estado de los postulados, ESTA SEGURO DE LA ACCION ?')"><input name='Archivar' type='submit' class="btn btn-danger btn-block" id='Archivar' value='*** ARCHIVAR CONVOCATORIA ***' />
+
+			<a href='convocatorias_ver_cerradas0.php?convocatoriaReabrir=<?php echo $convocatoria; ?>' onclick="return confirmar('Reabrir - ESTA SEGURO DE LA ACCION ?')">
+				<input name='reabrir' type='submit' class="btn btn-warning btn-block" id='reabrir' value='*** RE ABRIR CONVOCATORIA ***' />
+			</a>
+
+			<hr>
+
+			<a href='convocatorias_ver_cerradas0.php?convocatoria=<?php echo $convocatoria; ?>' onclick="return confirmar('ALERTA !!! ¿Si archiva esta convocatoria no se podra modificar el estado de los postulados, ESTA SEGURO DE LA ACCION ?')">
+				<input name='Archivar' type='submit' class="btn btn-danger btn-block" id='Archivar' value='*** ARCHIVAR CONVOCATORIA ***' />
 			</a>
 
 		<?php
 		}
-		echo "<HR><a href='convocatorias.php'><input type='submit' name='Volver' id='Volver' value='Volver a la ventana anterior...' class='btn btn-info btn-block'/></a>";
+		echo "<HR><a href='convocatorias.php'><input type='submit' name='Volver' id='Volver' value='Volver a la ventana anterior...' class='btn btn-success btn-block'/></a>";
 		?>
 
 	</aside>

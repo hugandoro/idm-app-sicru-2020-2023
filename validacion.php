@@ -45,6 +45,7 @@ $_SESSION["DES"] = $row[13];
 $_SESSION["SP"] = $row[14];
 $_SESSION["NOVEDADES"] = $row[15];
 $_SESSION["POSTULACION"] = $row[16];
+$_SESSION["POSTULACION_ADMIN"] = $row[21];
 $_SESSION["VISITA"] = $row[17];
 
 $_SESSION["MEJORAMIENTO"] = $row[19];

@@ -67,11 +67,11 @@
 		echo "<table class='table'>";
 		echo "<thead class='thead-dark'>";
 		echo "<TR>";
-		echo "<TH width='5%'><B></B></TH>";
+		echo "<TH width='2%'><B>Accion</B></TH>";
 		echo "<TH width='5%'><B>Cedula</B></TH>";
-		echo "<TH width='10%'><B>Nombre 1</B></TH>";
+		echo "<TH width='12%'><B>Nombre 1</B></TH>";
 		echo "<TH width='10%'><B>Nombre 2</B></TH>";
-		echo "<TH width='10%'><B>Apellido 1</B></TH>";
+		echo "<TH width='12%'><B>Apellido 1</B></TH>";
 		echo "<TH width='10%'><B>Apellido 2</B></TH>";
 		echo "<TH width='10%'><B>Postulado</B></TH>";
 		echo "<TH width='20%'><B>Barrio</B></TH>";
@@ -89,7 +89,7 @@
 
 			if ($_SESSION["POSTULACION"] == "4") {
 		?>
-				<TD><a href='convocatorias_ver1.php?convocatoria=<?php echo $convocatoria; ?>&cedula=<?php echo $rowCI[0]; ?>' onclick='return confirmar("Anular postulacion, ESTA SEGURO DE LA ACCION ?")'><img src='imagenes/eliminar.gif' width='20' height='20' alt='Eliminar Postulacion' /></a></TD>
+				<TD><a href='convocatorias_ver1.php?convocatoria=<?php echo $convocatoria; ?>&cedula=<?php echo $rowCI[0]; ?>' onclick='return confirmar("Anular postulacion, ESTA SEGURO DE LA ACCION ?")'><button type="button" class="btn btn-danger">Anular</button></a></TD>
 		<?php
 			} else
 				echo "<TD></TD>";
@@ -110,10 +110,11 @@
 		?>
 
 		<?php
-		if ($_SESSION["POSTULACION"] == "4") {
+		if ($_SESSION["POSTULACION_ADMIN"] == "4") {
 		?>
 			<a href='convocatorias_ver0.php?convocatoria=<?php echo $convocatoria; ?>' onclick='return confirmar("ALERTA !!! ¿Si cierra esta convocatoria no se podra postular mas registros, ESTA SEGURO DE LA ACCION ?")'>
-				<input name='Cerrar' type='submit' class='btn btn-warning btn-block' id='Cerrar' value='*** CERRAR CONVOCATORIA ***' /></a>";
+				<input name='Cerrar' type='submit' class='btn btn-warning btn-block' id='Cerrar' value='*** CERRAR CONVOCATORIA ***' />
+			</a>
 			<br>
 		<?php
 		}
