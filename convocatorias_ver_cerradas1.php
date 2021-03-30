@@ -17,7 +17,7 @@
 
 			if ($_SESSION["POSTULACION"] == "4") {
 				if ($bandera == "0") {
-					$sqlPO = "UPDATE convocatorias_ciudadanos SET resultado='1' WHERE (cedula = '$cedula') AND (id_proyecto = '$convocatoria')";
+					$sqlPO = "UPDATE convocatorias_ciudadanos SET resultado='1', motivo='' WHERE (cedula = '$cedula') AND (id_proyecto = '$convocatoria')";
 					$resultPO = mysqli_query($sle, $sqlPO);
 					//Registra el EVENTO EN EL LOG
 					$sql = "INSERT INTO log_eventos (fecha, hora, usuario, registro, evento) VALUES (now(), now(), " . $_SESSION["cedula"] . ", '$cedula', 'APROBADO')";
@@ -25,7 +25,8 @@
 					//****************************
 				}
 				if ($bandera == "1") {
-					$sqlPO = "UPDATE convocatorias_ciudadanos SET resultado='0' WHERE (cedula = '$cedula') AND (id_proyecto = '$convocatoria')";
+					$motivo = $_GET['motivo'];
+					$sqlPO = "UPDATE convocatorias_ciudadanos SET resultado='0', motivo='$motivo' WHERE (cedula = '$cedula') AND (id_proyecto = '$convocatoria')";
 					$resultPO = mysqli_query($sle, $sqlPO);
 					//Registra el EVENTO EN EL LOG
 					$sql = "INSERT INTO log_eventos (fecha, hora, usuario, registro, evento) VALUES (now(), now(), " . $_SESSION["cedula"] . ", '$cedula', 'RECHAZADO')";
@@ -46,6 +47,14 @@
 			function confirmar(texto) {
 				if (confirm(texto)) return true;
 				else return false;
+			}
+
+			function validar_motivo() {
+				if (document.getElementById('motivo').value == '') {
+					alert('Debe seleccionar un motivo de negacion');
+					return false;
+				}
+				return true;
 			}
 		</script>
 
@@ -73,13 +82,13 @@
 		echo "<thead class='thead-dark'>";
 		echo "<TR>";
 		echo "<TH width='5%'><B>Estado</B></TH>";
+		echo "<TH width='30%'><B>Motivo</B></TH>";
 		echo "<TH width='5%'><B>Cedula</B></TH>";
 		echo "<TH width='10%'><B>Nombre 1</B></TH>";
 		echo "<TH width='10%'><B>Nombre 2</B></TH>";
 		echo "<TH width='10%'><B>Apellido 1</B></TH>";
 		echo "<TH width='10%'><B>Apellido 2</B></TH>";
-		echo "<TH width='20%'><B>Barrio</B></TH>";
-		echo "<TH width='20%'><B>Direccion</B></TH>";
+		echo "<TH width='15%'><B>Barrio</B></TH>";
 		echo "</TR>";
 		echo "</thead>";
 
@@ -89,8 +98,10 @@
 			$sqlCI = "SELECT * FROM ciudadanos WHERE cedula = '$rowCC[1]'";
 			$resultCI = mysqli_query($sle, $sqlCI);
 			$rowCI = mysqli_fetch_row($resultCI);
+			
 			echo "<TR>";
 
+			// APROBAR o NEGAR
 			if ($_SESSION["POSTULACION"] == "4") {
 				if ($rowCC[5] == "0") {
 		?>
@@ -100,11 +111,45 @@
 
 				if ($rowCC[5] == "1") {
 				?>
-					<TD><a href='convocatorias_ver_cerradas1.php?convocatoria=<?php echo $convocatoria; ?>&cedula=<?php echo $rowCI[0]; ?>&b=1' onclick='return confirmar("NEGAR beneficio, ESTA SEGURO DE LA ACCION ?")'><button type="button" class="btn btn-success">Aprobado</button></a></TD>
+				    <form name="form1" method="get" onsubmit="return validar_motivo()" action="convocatorias_ver_cerradas1.php">
+						<input class="form-control" name="convocatoria" id="convocatoria" hidden <?php echo "value=" . $convocatoria ?>></td>
+						<input class="form-control" name="cedula" id="cedula" hidden <?php echo "value=" . $rowCI[0] ?>></td>
+						<input class="form-control" name="b" id="b" hidden value="1"></td>
+
+						<TD><input type="submit" class="btn btn-success" value="Aprobado"></TD>
+				<?php
+				}
+			} else
+				echo "<TD></TD>";
+			// Fin aprobar o negar ***
+
+
+			// MOTIVO DE APROBACION o NEGACION
+			if ($_SESSION["POSTULACION"] == "4") {
+				if ($rowCC[5] == "0") {
+					echo "<TD>$rowCC[6]</TD>";
+				}
+
+				if ($rowCC[5] == "1") {
+				?>
+					<TD>
+						<select class="form-control" name="motivo" id="motivo">
+							<option value="Sin información">Sin información</option>
+							<option value="No cumple visita técnica">No cumple visita técnica</option>
+							<option value="No cumple revisión juridica">No cumple revisión juridica</option>
+							<option value="Se encuentra en zona de riesgo">Se encuentra en zona de riesgo</option>
+							<option value="No alcanzo cupo">No alcanzo cupo</option>
+							<option value="Desestimiento voluntario">Desestimiento voluntario</option>
+						</select>
+					</TD>
+					</form>
+
 		<?php
 				}
 			} else
 				echo "<TD></TD>";
+			// Fin motivo ***
+
 
 			echo "<TD>$rowCI[0]</TD>";
 			echo "<TD>$rowCI[3]</TD>";
@@ -112,7 +157,6 @@
 			echo "<TD>$rowCI[5]</TD>";
 			echo "<TD>$rowCI[6]</TD>";
 			echo "<TD>$rowCI[9]</TD>";
-			echo "<TD>$rowCI[8]</TD>";
 			echo "</TR>";
 		}
 		echo "</tbody>";
