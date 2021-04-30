@@ -82,7 +82,7 @@
 		echo "<thead class='thead-dark'>";
 		echo "<TR>";
 		echo "<TH width='5%'><B>Estado</B></TH>";
-		echo "<TH width='30%'><B>Motivo</B></TH>";
+		echo "<TH width='30%'><B>Motivo negacion...</B></TH>";
 		echo "<TH width='5%'><B>Cedula</B></TH>";
 		echo "<TH width='10%'><B>Nombre 1</B></TH>";
 		echo "<TH width='10%'><B>Nombre 2</B></TH>";
