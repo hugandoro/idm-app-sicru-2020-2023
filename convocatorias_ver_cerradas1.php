@@ -134,7 +134,7 @@
 				?>
 					<TD>
 						<select class="form-control" name="motivo" id="motivo">
-							<option value="Sin información">Sin información</option>
+							<!--<option value="Sin información">Sin información</option>-->
 							<option value="No cumple visita técnica">No cumple visita técnica</option>
 							<option value="No cumple revisión juridica">No cumple revisión juridica</option>
 							<option value="Se encuentra en zona de riesgo">Se encuentra en zona de riesgo</option>
