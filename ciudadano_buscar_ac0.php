@@ -61,6 +61,7 @@ $aux = $vis + $mejora;
 			echo "<TR>";
 			echo "<TH>Proyecto</TH>";
 			echo "<TH>Estado</TH>";
+			echo "<TH>Motivo</TH>";
 			echo "</TR>";
 			echo "</thead>";
 
@@ -76,6 +77,8 @@ $aux = $vis + $mejora;
 				if (($rowCO1[5] == 0) && ($rowCO1[3] == 0)) echo "<TD><div class='alert alert-danger'>Negado</div></TD>";
 				if (($rowCO1[5] == 1) && ($rowCO1[3] == 0)) echo "<TD><div class='alert alert-success'>Asignado</div></TD>";
 				if (($rowCO1[5] == 1) && ($rowCO1[3] == 1)) echo "<TD><div class='alert alert-primary'>Postulacion en proceso - Preseleccionado</div></TD>";
+
+				echo "<TD>$rowCO1[6]</TD>";
 
 				echo "</TR>";
 			}
