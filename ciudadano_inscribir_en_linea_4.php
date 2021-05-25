@@ -167,6 +167,8 @@
 		</p>
 		<p>
 			<br><br><a href='index.php'><input type='submit' name='Volver' id='Volver' value='Terminar' class='btn btn-success btn-block'/></a>
+			<?php echo "<BR><center>Estimado usuario le invitamos a evaluar nuestro servicio diligenciando una breve encuesta<a target='_blank' href='https://docs.google.com/forms/d/e/1FAIpQLScsyG_Dl_vMe8o1iRphTtO5cmscLaKowD3OUn8IBsBJ0VvHRA/viewform'> | Califica el servicio recibido |</center></a>"; ?>
+
 		</TD>
 		</TR>
 	</aside>

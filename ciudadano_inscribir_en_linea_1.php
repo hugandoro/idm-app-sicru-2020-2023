@@ -144,6 +144,7 @@ $aux = $vis + $mejora;
 		//Le informa al usuario y solo permite volver al menu principal de consulta
 		if ($aux != 0) {
 			echo "<br><br><a href='index.php'><input type='submit' name='Volver' id='Volver' value='Volver a la ventana anterior...' class='btn btn-success btn-block'/></a>";
+			echo "<BR><center>Estimado usuario le invitamos a evaluar nuestro servicio diligenciando una breve encuesta<a target='_blank' href='https://docs.google.com/forms/d/e/1FAIpQLScsyG_Dl_vMe8o1iRphTtO5cmscLaKowD3OUn8IBsBJ0VvHRA/viewform'> | Califica el servicio recibido |</center></a>";
 		}
 		//***********************************************************************
 
