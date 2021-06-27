@@ -18,41 +18,106 @@
 					$filtro = " WHERE ";
 
 					//Complementa el FILTRO
-					if ($_POST["afiliacion"] == 0)
-						$filtro = $filtro . "(" . $baseT . ".cedula NOT IN (SELECT cruce_comfamiliar.cedula FROM cruce_comfamiliar WHERE afiliado != ''))";
+					if ($_POST["caja"] == 0)
+						$filtro = $filtro . "(" . $baseT . ".cedula NOT IN (SELECT cruce_caja.identificacion FROM cruce_caja WHERE identificacion = " . $baseT . ".cedula))";
 
-					if ($_POST["afiliacion"] == 1)
-						$filtro = $filtro . "(" . $baseT . ".cedula IN (SELECT cruce_comfamiliar.cedula FROM cruce_comfamiliar WHERE afiliado != ''))";
+					if ($_POST["caja"] == 1)
+						$filtro = $filtro . "(" . $baseT . ".cedula IN (SELECT cruce_caja.identificacion FROM cruce_caja WHERE identificacion = " . $baseT . ".cedula))";
 
-					if ($_POST["afiliacion"] == 2)
+					if ($_POST["caja"] == 2)
 						$filtro = $filtro . "(" . $baseT . ".cedula IN (SELECT " . $baseT . ".cedula FROM " . $baseT . "))";
 					//***********************	
-					if ($_POST["beneficiarios"] == 0)
-						$filtro = $filtro . " AND (" . $baseT . ".cedula NOT IN (SELECT cruce_comfamiliar.cedula FROM cruce_comfamiliar WHERE beneficiario != ''))";
 
-					if ($_POST["beneficiarios"] == 1)
-						$filtro = $filtro . " AND (" . $baseT . ".cedula IN (SELECT cruce_comfamiliar.cedula FROM cruce_comfamiliar WHERE beneficiario != ''))";
+					if ($_POST["subsidio_vivienda"] == 0)
+						$filtro = $filtro . " AND (" . $baseT . ".cedula NOT IN (SELECT cruce_subsidio_vivienda.identificacion FROM cruce_subsidio_vivienda WHERE identificacion = " . $baseT . ".cedula))";
 
-					if ($_POST["beneficiarios"] == 2)
-						$filtro = $filtro . " AND (" . $baseT . ".cedula IN (SELECT " . $baseT . ".cedula FROM " . $baseT . "))";
-					//***********************		
-					if ($_POST["otros"] == 0)
-						$filtro = $filtro . " AND (" . $baseT . ".cedula NOT IN (SELECT cruce_comfamiliar.cedula FROM cruce_comfamiliar WHERE otras_ciudades != ''))";
+					if ($_POST["subsidio_vivienda"] == 1)
+						$filtro = $filtro . " AND (" . $baseT . ".cedula IN (SELECT cruce_subsidio_vivienda.identificacion FROM cruce_subsidio_vivienda WHERE identificacion = " . $baseT . ".cedula))";
 
-					if ($_POST["otros"] == 1)
-						$filtro = $filtro . " AND (" . $baseT . ".cedula IN (SELECT cruce_comfamiliar.cedula FROM cruce_comfamiliar WHERE otras_ciudades != ''))";
-
-					if ($_POST["otros"] == 2)
+					if ($_POST["subsidio_vivienda"] == 2)
 						$filtro = $filtro . " AND (" . $baseT . ".cedula IN (SELECT " . $baseT . ".cedula FROM " . $baseT . "))";
 					//***********************	
-					if ($_POST["cruce"] == 0)
-						$filtro = $filtro . " AND (" . $baseT . ".cedula NOT IN (SELECT cruce_comfamiliar.cedula FROM cruce_comfamiliar))";
 
-					if ($_POST["cruce"] == 1)
-						$filtro = $filtro . " AND (" . $baseT . ".cedula IN (SELECT cruce_comfamiliar.cedula FROM cruce_comfamiliar))";
+					if ($_POST["subsidio_vivienda_otros"] == 0)
+						$filtro = $filtro . " AND (" . $baseT . ".cedula NOT IN (SELECT cruce_subsidio_vivienda_otros.identificacion FROM cruce_subsidio_vivienda_otros WHERE identificacion = " . $baseT . ".cedula))";
 
-					if ($_POST["cruce"] == 2)
+					if ($_POST["subsidio_vivienda_otros"] == 1)
+						$filtro = $filtro . " AND (" . $baseT . ".cedula IN (SELECT cruce_subsidio_vivienda_otros.identificacion FROM cruce_subsidio_vivienda_otros WHERE identificacion = " . $baseT . ".cedula))";
+
+					if ($_POST["subsidio_vivienda_otros"] == 2)
 						$filtro = $filtro . " AND (" . $baseT . ".cedula IN (SELECT " . $baseT . ".cedula FROM " . $baseT . "))";
+					//***********************	
+
+					if ($_POST["catastro"] == 0)
+						$filtro = $filtro . " AND (" . $baseT . ".cedula NOT IN (SELECT cruce_catastro.identificacion FROM cruce_catastro WHERE identificacion = " . $baseT . ".cedula))";
+
+					if ($_POST["catastro"] == 1)
+						$filtro = $filtro . " AND (" . $baseT . ".cedula IN (SELECT cruce_catastro.identificacion FROM cruce_catastro WHERE identificacion = " . $baseT . ".cedula))";
+
+					if ($_POST["catastro"] == 2)
+						$filtro = $filtro . " AND (" . $baseT . ".cedula IN (SELECT " . $baseT . ".cedula FROM " . $baseT . "))";
+
+					if ($_POST["catastro"] == 3)
+						$filtro = $filtro . " AND (" . $baseT . ".cedula NOT IN (SELECT cruce_catastro.identificacion FROM cruce_catastro WHERE identificacion = " . $baseT . ".cedula) 
+													OR (" . $baseT . ".cedula IN (SELECT cruce_catastro.identificacion FROM cruce_catastro WHERE cruce_catastro.municipio LIKE 'DOSQUEBRADAS') 
+														AND ((SELECT count(1) FROM cruce_catastro WHERE cruce_catastro.identificacion = " . $baseT . ".cedula) = '1')
+													)
+												)";
+
+					if ($_POST["catastro"] == 4)
+						$filtro = $filtro . " AND (" . $baseT . ".cedula IN (SELECT cruce_catastro.identificacion FROM cruce_catastro WHERE cruce_catastro.municipio LIKE 'DOSQUEBRADAS') 
+														AND ((SELECT count(1) FROM cruce_catastro WHERE cruce_catastro.identificacion = " . $baseT . ".cedula) = '1')
+												)";
+					//***********************	
+
+					if ($_POST["nuevo_hogar"] == 0)
+						$filtro = $filtro . " AND (" . $baseT . ".cedula NOT IN (SELECT cruce_nuevo_hogar.identificacion FROM cruce_nuevo_hogar WHERE identificacion = " . $baseT . ".cedula))";
+
+					if ($_POST["nuevo_hogar"] == 1)
+						$filtro = $filtro . " AND (" . $baseT . ".cedula IN (SELECT cruce_nuevo_hogar.identificacion FROM cruce_nuevo_hogar WHERE identificacion = " . $baseT . ".cedula))";
+
+					if ($_POST["nuevo_hogar"] == 2)
+						$filtro = $filtro . " AND (" . $baseT . ".cedula IN (SELECT " . $baseT . ".cedula FROM " . $baseT . "))";
+					//***********************	
+
+					if ($_POST["sisben"] == 0)
+						$filtro = $filtro . " AND (" . $baseT . ".cedula NOT IN (SELECT cruce_sisben.identificacion FROM cruce_sisben WHERE identificacion = " . $baseT . ".cedula))";
+
+					if ($_POST["sisben"] == 1)
+						$filtro = $filtro . " AND (" . $baseT . ".cedula IN (SELECT cruce_sisben.identificacion FROM cruce_sisben WHERE identificacion = " . $baseT . ".cedula))";
+
+					if ($_POST["sisben"] == 2)
+						$filtro = $filtro . " AND (" . $baseT . ".cedula IN (SELECT " . $baseT . ".cedula FROM " . $baseT . "))";
+					//***********************	
+
+					if ($_POST["unidos"] == 0)
+						$filtro = $filtro . " AND (" . $baseT . ".cedula NOT IN (SELECT cruce_unidos.identificacion FROM cruce_unidos WHERE identificacion = " . $baseT . ".cedula))";
+
+					if ($_POST["unidos"] == 1)
+						$filtro = $filtro . " AND (" . $baseT . ".cedula IN (SELECT cruce_unidos.identificacion FROM cruce_unidos WHERE identificacion = " . $baseT . ".cedula))";
+
+					if ($_POST["unidos"] == 2)
+						$filtro = $filtro . " AND (" . $baseT . ".cedula IN (SELECT " . $baseT . ".cedula FROM " . $baseT . "))";
+					//***********************	
+
+					if ($_POST["reunidos"] == 0)
+						$filtro = $filtro . " AND (" . $baseT . ".cedula NOT IN (SELECT cruce_reunidos.documento FROM cruce_reunidos WHERE documento = " . $baseT . ".cedula))";
+
+					if ($_POST["reunidos"] == 1)
+						$filtro = $filtro . " AND (" . $baseT . ".cedula IN (SELECT cruce_reunidos.documento FROM cruce_reunidos WHERE documento = " . $baseT . ".cedula))";
+
+					if ($_POST["reunidos"] == 2)
+						$filtro = $filtro . " AND (" . $baseT . ".cedula IN (SELECT " . $baseT . ".cedula FROM " . $baseT . "))";
+					//***********************	
+
+					//if ($_POST["cruce"] == 0)
+					//	$filtro = $filtro . " AND (" . $baseT . ".cedula NOT IN (SELECT cruce_comfamiliar.cedula FROM cruce_comfamiliar))";
+
+					//if ($_POST["cruce"] == 1)
+					//	$filtro = $filtro . " AND (" . $baseT . ".cedula IN (SELECT cruce_comfamiliar.cedula FROM cruce_comfamiliar))";
+
+					//if ($_POST["cruce"] == 2)
+					//	$filtro = $filtro . " AND (" . $baseT . ".cedula IN (SELECT " . $baseT . ".cedula FROM " . $baseT . "))";
 					//***********************	
 
 

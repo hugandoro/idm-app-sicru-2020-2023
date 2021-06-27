@@ -23,7 +23,6 @@
 		$des = 0;
 		$sip = 0;
 		$reubicado = 0;
-		$comfamiliar = 0;
 		$mejora = 0; //MEJORAMIENTO
 
 		mysqli_select_db($sle, $database_sle);
@@ -50,20 +49,7 @@
 		// Fin identificacion sub base *************
 
 
-		//Busca Novedades en COMFAMILIAR
-		$sql = "SELECT * FROM cruce_comfamiliar WHERE ((afiliado!='') || (beneficiario!='') || (otras_ciudades!='')) && (cedula = '$cedula')";
-		$resultado = mysqli_query($sle, $sql) or die(mysqli_error());
-		if (mysqli_num_rows($resultado) > 0) {
-			$comfamiliar = 1;
-			$row = mysqli_fetch_row($resultado);
-			$afiliado = $row[1];
-			$beneficiario = $row[2];
-			$otras_ciudades = $row[3];
-		}
-		//===============================
-
-
-		$aux = $mr + $mu + $pr + $vip + $vis + $des + $sip + $reubicado + $comfamiliar;
+		$aux = $mr + $mu + $pr + $vip + $vis + $des + $sip + $reubicado;
 
 
 		if ($nombre != '') {
@@ -173,10 +159,6 @@
 
 			if ($reubicado == 1) echo "<B>*** REUBICADO ***</B><BR>";
 
-			if ($comfamiliar == 1) {
-				echo "<HR><B>*** Con anotacion de novedad en CRUCE COMFAMILIAR ***</B><BR>";
-				echo "<a href='vernovedad0a.php?cedula=" . $cedula . "'><input type='submit' name='Novedad Comfamiliar' id='COMFAMILIAR' value='Ver novedad de Comfamiliar' class='btn btn-success btn-block'/></a><BR>";
-			}
 		}
 
 		echo "<HR><a href='convocatorias.php'><input type='submit' name='Volver' id='Volver' value='Volver a la ventana anterior...' class='btn btn-success btn-block'/></a>";
