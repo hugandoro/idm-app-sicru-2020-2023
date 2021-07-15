@@ -210,7 +210,7 @@
       </tr>
       <tr>
         <td colspan="6">
-          <p>Se certifica que el señor (a) <B><?php echo $Pnombre; ?></B>, identificada con documento de identificacion N° <B><?php echo $Pcedula; ?></B>, ha presentado documentos en ( __ ) folios para postularse dentro del programa <B><?php echo $Pproyecto; ?> . </B>Formulario de Postulacion N° <B><?php echo $Pcodigopin; ?></B>. En constancia se firma en Dosquebradas el <?php echo date('Y-m-d'); ?>. *** La presente postulacion no garantiza la otorgacion de vivienda, cupo, subidio o mejoramiento, asi como tampoco compromete al IDM con la adjudicacion del mismo a la persona aqui postulante ***</p>
+          <p>Se certifica que el señor (a) <B><?php echo $Pnombre; ?></B>, identificado (a) con documento de identificacion N° <B><?php echo $Pcedula; ?></B>, ha presentado documentos en ( __ ) folios para postularse dentro del programa <B><?php echo $Pproyecto; ?> . </B>Formulario de Postulacion N° <B><?php echo $Pcodigopin; ?></B>. En constancia se firma en Dosquebradas el <?php echo date('Y-m-d'); ?>. *** La presente postulacion no garantiza la otorgacion de vivienda, cupo, subidio o mejoramiento, tampoco compromete al IDM con la adjudicacion del mismo a la persona aqui postulante ***</p>
           <p>Firma __________________________________</p>
         </td>
       </tr>

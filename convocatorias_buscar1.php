@@ -37,7 +37,7 @@
 
 			echo "<center><font size='+1'>$rowPO[1]</font><BR><BR>";
 			echo "<center>Solo se permite estar postulado activamente para un proyecto, por lo tanto debe retirarlo de la postulacion actual o definir su estadio definitivo antes de poder inscribir al ciudadano en otra convocatoria<BR><BR>";
-			//echo "<HR><a href='convocatorias_ficha0.php?cedula=$cedula&convocatoria=$rowCO[0]'><input type='submit' name='Volver' id='Volver' value='Imprimir Ficha de Postulacion' class='btn btn-info btn-block'/></a>";
+			echo "<HR><a href='convocatorias_ficha0.php?cedula=$cedula&convocatoria=$rowCO[0]'><input type='submit' name='Volver' id='Volver' value='Imprimir Ficha de Postulacion' class='btn btn-info btn-block'/></a>";
 		} else {
 			echo "<BR><center>Actualmente NO se encuentra postulado a ninguna convocatoria vigente";
 		}

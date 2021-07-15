@@ -121,11 +121,30 @@
 					//***********************	
 
 
-					//Si no hay Filtro lo Deja limpio 	
-					if ($filtro == " WHERE ")
-						$filtro = $filtro . " (id_base = $base) ORDER BY id_ciudadano ASC";
-					else
-						$filtro = $filtro . " AND (id_base = $base) ORDER BY id_ciudadano ASC";
+					//Si no hay filtro NO concatena
+					if ($filtro == " WHERE "){
+						if ($_POST["subbase"] == "MEU") $filtro = $filtro . " (mejora_urbana = 'SI') ORDER BY id_ciudadano ASC";
+						if ($_POST["subbase"] == "MER") $filtro = $filtro . " (mejora_rural = 'SI') ORDER BY id_ciudadano ASC";
+						if ($_POST["subbase"] == "DES") $filtro = $filtro . " (condicion_desplazado = 'SI') ORDER BY id_ciudadano ASC";
+						if ($_POST["subbase"] == "SIP") $filtro = $filtro . " (tiene_sitio_propio = 'SI') ORDER BY id_ciudadano ASC";
+						if ($_POST["subbase"] == "REU") $filtro = $filtro . " (por_reubicar = 'SI') ORDER BY id_ciudadano ASC";
+						if ($_POST["subbase"] == "VIP") $filtro = $filtro . " (vivienda_prioritaria = 'SI') ORDER BY id_ciudadano ASC";
+						if ($_POST["subbase"] == "VIS") $filtro = $filtro . " ((mejora_urbana = 'NO') AND (mejora_rural = 'NO') AND (condicion_desplazado = 'NO') AND (tiene_sitio_propio = 'NO') AND (por_reubicar = 'NO') AND (vivienda_prioritaria = 'NO') AND (id_base = '3')) ORDER BY id_ciudadano ASC";
+						//Cualquier sub base
+						if ($_POST["subbase"] == 2) $filtro = $filtro . " (id_base = $base) ORDER BY id_ciudadano ASC";
+					}
+					//Si trae filtro concatena
+					else{
+						if ($_POST["subbase"] == "MEU") $filtro = $filtro . " AND (mejora_urbana = 'SI') ORDER BY id_ciudadano ASC";
+						if ($_POST["subbase"] == "MER") $filtro = $filtro . " AND (mejora_rural = 'SI') ORDER BY id_ciudadano ASC";
+						if ($_POST["subbase"] == "DES") $filtro = $filtro . " AND (condicion_desplazado = 'SI') ORDER BY id_ciudadano ASC";
+						if ($_POST["subbase"] == "SIP") $filtro = $filtro . " AND (tiene_sitio_propio = 'SI') ORDER BY id_ciudadano ASC";
+						if ($_POST["subbase"] == "REU") $filtro = $filtro . " AND (por_reubicar = 'SI') ORDER BY id_ciudadano ASC";
+						if ($_POST["subbase"] == "VIP") $filtro = $filtro . " AND (vivienda_prioritaria = 'SI') ORDER BY id_ciudadano ASC";
+						if ($_POST["subbase"] == "VIS") $filtro = $filtro . " AND ((mejora_urbana = 'NO') AND (mejora_rural = 'NO') AND (condicion_desplazado = 'NO') AND (tiene_sitio_propio = 'NO') AND (por_reubicar = 'NO') AND (vivienda_prioritaria = 'NO') AND (id_base = '3')) ORDER BY id_ciudadano ASC";
+						//Cualquier sub base
+						if ($_POST["subbase"] == 2) $filtro = $filtro . " AND (id_base = $base) ORDER BY id_ciudadano ASC";
+					}
 
 					mysqli_select_db($sle, $database_sle);
 					mysqli_query($sle, "SET NAMES 'utf8'");

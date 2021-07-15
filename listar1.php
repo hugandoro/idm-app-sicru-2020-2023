@@ -203,7 +203,7 @@
 
 
 <div class="row">
-  <aside class="col-sm-3">
+  <aside class="col-sm-2">
     <label><b>Nuevo hogar</b></label>
     <br />
     <label><input type="radio" name="nuevo_hogar" value="1" id="nuevo_hogar" />Con reporten</label>
@@ -213,7 +213,7 @@
     <label><input name="nuevo_hogar" type="radio" id="nuevo_hogar" value="2" checked="checked" />Cualquiera</label>
   </aside>
 
-  <aside class="col-sm-3">
+  <aside class="col-sm-2">
     <label><b>Sisben</b></label>
     <br />
     <label><input type="radio" name="sisben" value="1" id="sisben" />Con reporten</label>
@@ -223,7 +223,7 @@
     <label><input name="sisben" type="radio" id="sisben" value="2" checked="checked" />Cualquiera</label>
   </aside>
 
-  <aside class="col-sm-3">
+  <aside class="col-sm-2">
     <label><b>Unidos</b></label>
     <br />
     <label><input type="radio" name="unidos" value="1" id="unidos" />Con reporten</label>
@@ -233,7 +233,7 @@
     <label><input name="unidos" type="radio" id="unidos" value="2" checked="checked" />Cualquiera</label>
   </aside>
 
-  <aside class="col-sm-3">
+  <aside class="col-sm-2">
     <label><b>Reunidos</b></label>
     <br />
     <label><input type="radio" name="reunidos" value="1" id="reunidos" />Con reporten</label>
@@ -242,6 +242,37 @@
     <br />
     <label><input name="reunidos" type="radio" id="reunidos" value="2" checked="checked" />Cualquiera</label>
   </aside>
+
+  <?php if ($base == 7) { ?>
+    <aside class="col-sm-4">
+      <label><b>Sub bases de datos</b></label>
+      <br />
+      <label><input type="radio" name="subbase" value="MEU" id="subbase" />Mejormiento urbano</label>
+      <br />
+      <label><input name="subbase" type="radio" id="subbase" value="MER" />Mejoramiento rural</label>
+      <br />
+      <label><input name="subbase" type="radio" id="subbase" value="2" checked="checked" />Cualquiera</label>
+    </aside>
+  <?php } ?>
+
+  <?php if ($base == 3) { ?>
+    <aside class="col-sm-4">
+      <label><b>Sub bases de datos</b></label>
+      <br />
+      <label><input type="radio" name="subbase" value="DES" id="subbase" />Desplazado</label>
+      <br />
+      <label><input name="subbase" type="radio" id="subbase" value="SIP" />Sitito propio</label>
+      <br />
+      <label><input type="radio" name="subbase" value="REU" id="subbase" />Reubicacion</label>
+      <br />
+      <label><input name="subbase" type="radio" id="subbase" value="VIP" />VIP</label>
+      <br />
+      <label><input name="subbase" type="radio" id="subbase" value="VIS" />VIS</label>
+      <br />
+      <label><input name="subbase" type="radio" id="subbase" value="2" checked="checked" />Cualquiera</label>
+    </aside>
+  <?php } ?>
+
 </div>
 
 <!--
