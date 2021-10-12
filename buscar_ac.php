@@ -9,11 +9,28 @@
     <div class="card">
       <article class="card-body">
         <h4 class="card-title mb-4 mt-1">Consultar las bases de datos...</h4>
-        <form id="form1" name="form1" method="POST" action="buscar_ac0.php">
+        <form id="form1" name="form1" method="POST" action="buscar_ac_previo.php">
           <div class="form-group">
             <label>Digite N° de Cedula</label>
             <input name="cedula" id="cedula" class="form-control" type="number">
           </div>
+
+          <div class="form-group">
+            <br>
+            <h5 class="card-title mb-4 mt-1">Filtros adicionales de consulta...</h5>
+            <hr>
+
+
+            <label>Primer nombre</label>
+            <input name="nombre_uno" id="nombre_uno" class="form-control" type="text">
+            <label>Segundo nombre</label>
+            <input name="nombre_dos" id="nombre_dos" class="form-control" type="text">
+            <label>Primer apellido</label>
+            <input name="apellido_uno" id="apellido_uno" class="form-control" type="text">
+            <label>Primer apellido</label>
+            <input name="apellido_dos" id="apellido_dos" class="form-control" type="text">
+          </div>
+
           <div class="form-group">
             <button type="submit" class="btn btn-success btn-block"> Consultar </button>
           </div>
