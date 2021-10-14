@@ -12,23 +12,30 @@
         <form id="form1" name="form1" method="POST" action="buscar_ac_previo.php">
           <div class="form-group">
             <label>Digite N° de Cedula</label>
-            <input name="cedula" id="cedula" class="form-control" type="number">
+            <input name="cedula" id="cedula" class="form-control" type="number" placeholder="Consultar por numero de cedula...">
           </div>
 
           <div class="form-group">
             <br>
+            <h5 class="card-title mb-4 mt-1">Filtro general de consulta...</h5>
+            <hr>
+
+            <label>Nombre completo a consultar</label>
+            <input name="nombre_completo" id="nombre_completo" class="form-control" type="text" placeholder="Digite el nombre a consultar con palabras separadas por espacios...">
+
+
+            <br>
             <h5 class="card-title mb-4 mt-1">Filtros adicionales de consulta...</h5>
             <hr>
 
-
             <label>Primer nombre</label>
-            <input name="nombre_uno" id="nombre_uno" class="form-control" type="text">
+            <input name="nombre_uno" id="nombre_uno" class="form-control" type="text" placeholder="Consultar por primer nombre...">
             <label>Segundo nombre</label>
-            <input name="nombre_dos" id="nombre_dos" class="form-control" type="text">
+            <input name="nombre_dos" id="nombre_dos" class="form-control" type="text" placeholder="Consultar por segundo nombre...">
             <label>Primer apellido</label>
-            <input name="apellido_uno" id="apellido_uno" class="form-control" type="text">
+            <input name="apellido_uno" id="apellido_uno" class="form-control" type="text" placeholder="Consultar por primer apellido...">
             <label>Primer apellido</label>
-            <input name="apellido_dos" id="apellido_dos" class="form-control" type="text">
+            <input name="apellido_dos" id="apellido_dos" class="form-control" type="text" placeholder="Consultar por segundo apellido...">
           </div>
 
           <div class="form-group">

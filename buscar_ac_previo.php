@@ -8,12 +8,15 @@ $nombreUno = $_POST['nombre_uno'];
 $nombreDos = $_POST['nombre_dos'];
 $apellidoUno = $_POST['apellido_uno'];
 $apellidoDos = $_POST['apellido_dos'];
+$nombreCompleto = $_POST['nombre_completo'];
 
 mysqli_select_db($sle, $database_sle);
 mysqli_query($sle, "SET NAMES 'utf8'");
 
+// ------------------------------------------------------------------------------
+// Sentencia SQL generada por combinacion de filtros CEDULA - NOMBRES - APELLIDOS
+// ------------------------------------------------------------------------------
 $sql = "SELECT * FROM ciudadanos WHERE ";
-
 if ($cedulaTemporal != "")
   $sql = $sql . "(cedula = '$cedulaTemporal') AND";
 if ($nombreUno != "")
@@ -25,12 +28,78 @@ if ($apellidoUno != "")
 if ($apellidoDos != "")
   $sql = $sql . " (apellido2 LIKE '%$apellidoDos%') AND";
 
+//Termina la sentencia SQL
 if ($sql == "SELECT * FROM ciudadanos WHERE ")
   $sql = $sql . "(cedula = '')";
 else
   $sql = $sql . "(cedula != 0)";
+// Fin generacion sentencia SQL
 
+
+// ------------------------------------------
+// SEntencia SQL generada por NOMBRE COMPLETO
+// ------------------------------------------
+if ($nombreCompleto != ""){
+  $sql = "SELECT * FROM ciudadanos WHERE ";
+
+  $separador = " ";
+  $palabrasSeparadas = explode($separador, $nombreCompleto);
+  //var_dump($palabrasSeparadas);
+
+  //Recorre recursivamente el array de palabras para consultar
+  //for($i = 0; $i < count($palabrasSeparadas); $i++){
+  //  if ($palabrasSeparadas[$i] != ""){
+  //  }
+  //}
+
+  $sql = $sql . "(";
+  $sql = $sql . "(nombre1 LIKE '%$palabrasSeparadas[0]%') OR";
+  $sql = $sql . "(nombre2 LIKE '%$palabrasSeparadas[0]%') OR";
+  $sql = $sql . "(apellido1 LIKE '%$palabrasSeparadas[0]%') OR";
+  $sql = $sql . "(apellido2 LIKE '%$palabrasSeparadas[0]%')";
+  $sql = $sql . ")";
+
+  $sql = $sql . " AND ";
+
+  $sql = $sql . "(";
+  $sql = $sql . "(nombre1 LIKE '%$palabrasSeparadas[1]%') OR";
+  $sql = $sql . "(nombre2 LIKE '%$palabrasSeparadas[1]%') OR";
+  $sql = $sql . "(apellido1 LIKE '%$palabrasSeparadas[1]%') OR";
+  $sql = $sql . "(apellido2 LIKE '%$palabrasSeparadas[1]%')";
+  $sql = $sql . ")";
+
+  $sql = $sql . " AND ";
+
+  $sql = $sql . "(";
+  $sql = $sql . "(nombre1 LIKE '%$palabrasSeparadas[2]%') OR";
+  $sql = $sql . "(nombre2 LIKE '%$palabrasSeparadas[2]%') OR";
+  $sql = $sql . "(apellido1 LIKE '%$palabrasSeparadas[2]%') OR";
+  $sql = $sql . "(apellido2 LIKE '%$palabrasSeparadas[2]%')";
+  $sql = $sql . ")";
+
+  $sql = $sql . " AND ";
+
+  $sql = $sql . "(";
+  $sql = $sql . "(nombre1 LIKE '%$palabrasSeparadas[3]%') OR";
+  $sql = $sql . "(nombre2 LIKE '%$palabrasSeparadas[3]%') OR";
+  $sql = $sql . "(apellido1 LIKE '%$palabrasSeparadas[3]%') OR";
+  $sql = $sql . "(apellido2 LIKE '%$palabrasSeparadas[3]%')";
+  $sql = $sql . ")";
+
+  $sql = $sql . " AND ";
+
+  //Termina la sentencia SQL
+  if ($sql == "SELECT * FROM ciudadanos WHERE ")
+    $sql = $sql . "(cedula = '')";
+  else
+    $sql = $sql . "(cedula != 0)";
+}
+// Fin generacion sentencia SQL
+
+
+// Ejecuta la consulta SQL respectiva
 $resultado = mysqli_query($sle, $sql) or die(mysqli_error());
+
 ?>
 
 <div class="row">
