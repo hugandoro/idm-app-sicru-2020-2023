@@ -772,7 +772,7 @@
         </tr>
         <tr>
           <th >Fecha de Nacimiento</th>
-          <td bgcolor="<?php echo $c9 ?>" colspan="3"><input class="form-control" name="edad" type="date" id="edad" /></td>
+          <td bgcolor="<?php echo $c9 ?>" colspan="3"><input class="form-control" name="edad" type="date" value="0001-01-01" id="edad" /></td>
         </tr>
         <tr>
           <th >Direccion</th>
@@ -828,61 +828,61 @@
           <th >Familiar 1</th>
           <td bgcolor="<?php echo $c20 ?>"><input class="form-control" name="familiar1" type="text" id="familiar1" size="50" onkeyup="this.value=this.value.toUpperCase()" /> </td>
           <td bgcolor="<?php echo $c21 ?>"><input class="form-control" name="docu1" type="number" value='0' id="docu1" onkeypress="return acceptNum(event)" /></td>
-          <td><input name="edad1" type="date" id="edad1" /></td>
+          <td><input name="edad1" type="date" value="0001-01-01" id="edad1" /></td>
         </tr>
         <tr>
           <th >Familiar 2</th>
           <td bgcolor="<?php echo $c22 ?>"><input class="form-control" name="familiar2" type="text" id="familiar2" size="50" onkeyup="this.value=this.value.toUpperCase()" /></td>
           <td bgcolor="<?php echo $c23 ?>"><input class="form-control" name="docu2" type="number" value='0' id="docu2" onkeypress="return acceptNum(event)" /></td>
-          <td><input name="edad2" type="date" id="edad2" /></td>
+          <td><input name="edad2" type="date" value="0001-01-01" id="edad2" /></td>
         </tr>
         <tr>
           <th >Familiar 3</th>
           <td bgcolor="<?php echo $c24 ?>"><input class="form-control" name="familiar3" type="text" id="familiar3" size="50" onkeyup="this.value=this.value.toUpperCase()" /></td>
           <td bgcolor="<?php echo $c25 ?>"><input class="form-control" name="docu3" type="number" value='0' id="docu3" onkeypress="return acceptNum(event)" /></td>
-          <td><input name="edad3" type="date" id="edad3" /></td>
+          <td><input name="edad3" type="date" value="0001-01-01" id="edad3" /></td>
         </tr>
         <tr>
           <th >Familiar 4</th>
           <td bgcolor="<?php echo $c26 ?>"><input class="form-control" name="familiar4" type="text" id="familiar4" size="50" onkeyup="this.value=this.value.toUpperCase()" /></td>
           <td bgcolor="<?php echo $c27 ?>"><input class="form-control" name="docu4" type="number" value='0' id="docu4" onkeypress="return acceptNum(event)" /></td>
-          <td><input name="edad4" type="date" id="edad4" /></td>
+          <td><input name="edad4" type="date" value="0001-01-01" id="edad4" /></td>
         </tr>
         <tr>
           <th >Familiar 5</th>
           <td bgcolor="<?php echo $c28 ?>"><input class="form-control" name="familiar5" type="text" id="familiar5" size="50" onkeyup="this.value=this.value.toUpperCase()" /></td>
           <td bgcolor="<?php echo $c29 ?>"><input class="form-control" name="docu5" type="number" value='0' id="docu5" onkeypress="return acceptNum(event)" /></td>
-          <td><input name="edad5" type="date" id="edad5" /></td>
+          <td><input name="edad5" type="date" value="0001-01-01" id="edad5" /></td>
         </tr>
         <tr>
           <th >Familiar 6</th>
           <td bgcolor="<?php echo $c30 ?>"><input class="form-control" name="familiar6" type="text" id="familiar6" size="50" onkeyup="this.value=this.value.toUpperCase()" /></td>
           <td bgcolor="<?php echo $c31 ?>"><input class="form-control" name="docu6" type="number" value='0' id="docu6" onkeypress="return acceptNum(event)" /></td>
-          <td><input name="edad6" type="date" id="edad6" /></td>
+          <td><input name="edad6" type="date" value="0001-01-01" id="edad6" /></td>
         </tr>
         <tr>
           <th >Familiar 7</th>
           <td bgcolor="<?php echo $c32 ?>"><input class="form-control" name="familiar7" type="text" id="familiar7" size="50" onkeyup="this.value=this.value.toUpperCase()" /></td>
           <td bgcolor="<?php echo $c33 ?>"><input class="form-control" name="docu7" type="number" value='0' id="docu7" onkeypress="return acceptNum(event)" /></td>
-          <td><input name="edad7" type="date" id="edad7" /></td>
+          <td><input name="edad7" type="date" value="0001-01-01" id="edad7" /></td>
         </tr>
         <tr>
           <th >Familiar 8</th>
           <td bgcolor="<?php echo $c34 ?>"><input class="form-control" name="familiar8" type="text" id="familiar8" size="50" onkeyup="this.value=this.value.toUpperCase()" /></td>
           <td bgcolor="<?php echo $c35 ?>"><input class="form-control" name="docu8" type="number" value='0' id="docu8" onkeypress="return acceptNum(event)" /></td>
-          <td><input name="edad8" type="date" id="edad8" /></td>
+          <td><input name="edad8" type="date" value="0001-01-01" id="edad8" /></td>
         </tr>
         <tr>
           <th >Familiar 9</th>
           <td bgcolor="<?php echo $c36 ?>"><input class="form-control" name="familiar9" type="text" id="familiar9" size="50" onkeyup="this.value=this.value.toUpperCase()" /></td>
           <td bgcolor="<?php echo $c37 ?>"><input class="form-control" name="docu9" type="number" value='0' id="docu9" onkeypress="return acceptNum(event)" /></td>
-          <td><input name="edad9" type="date" id="edad9" /></td>
+          <td><input name="edad9" type="date" value="0001-01-01" id="edad9" /></td>
         </tr>
         <tr>
           <th >Familiar 10</th>
           <td bgcolor="<?php echo $c38 ?>"><input class="form-control" name="familiar10" type="text" id="familiar10" size="50" onkeyup="this.value=this.value.toUpperCase()" /></td>
           <td bgcolor="<?php echo $c39 ?>"><input class="form-control" name="docu10" type="number" value='0' id="docu10" onkeypress="return acceptNum(event)" /></td>
-          <td><input name="edad10" type="date" id="edad10" /></td>
+          <td><input name="edad10" type="date" value="0001-01-01" id="edad10" /></td>
         </tr>
 
         <tr>
@@ -956,7 +956,7 @@
         </tr>
         <tr>
           <th >Fecha de Retiro</th>
-          <td colspan="3" bgcolor="<?php echo $c50 ?>"><input class="form-control" value="0001-01-01" name="retiro" type="date" id="retiro" /></td>
+          <td colspan="3" bgcolor="<?php echo $c50 ?>"><input class="form-control" value="0001-01-01" name="retiro" type="date" value="0001-01-01" id="retiro" /></td>
         </tr>
 
         <tr>
