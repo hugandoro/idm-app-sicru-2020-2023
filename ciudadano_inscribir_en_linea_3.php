@@ -1,3 +1,7 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+?>
 <?php include("includes/header.php"); ?>
 <?php include("includes/title.php"); ?>
 
@@ -944,7 +948,7 @@
 
         <tr>
           <th >Valor Ahorrado</th>
-          <td colspan="3" bgcolor="<?php echo $c47 ?>"><input class="form-control" name="valorahorrado" type="number" id="valorahorrado" onkeypress="return acceptNum(event)" size="30" maxlength="30" /></td>
+          <td colspan="3" bgcolor="<?php echo $c47 ?>"><input class="form-control" name="valorahorrado" type="number" value="0" id="valorahorrado" onkeypress="return acceptNum(event)" size="30" maxlength="30" /></td>
         </tr>
         <tr>
           <th >Entidad</th>
@@ -965,7 +969,7 @@
         </tr>
         <tr>
           <th >Preaprobado Valor</th>
-          <td colspan="3" bgcolor="<?php echo $c52 ?>"><input class="form-control" name="preaprobadovalor" type="number" id="preaprobadovalor" onkeypress="return acceptNum(event)" size="30" maxlength="50" /></td>
+          <td colspan="3" bgcolor="<?php echo $c52 ?>"><input class="form-control" name="preaprobadovalor" type="number" value="0" id="preaprobadovalor" onkeypress="return acceptNum(event)" size="30" maxlength="50" /></td>
         </tr>
 
         <tr>
@@ -974,7 +978,7 @@
         </tr>
         <tr>
           <th >Cesantias Valor</th>
-          <td colspan="3" bgcolor="<?php echo $c54 ?>"><input class="form-control" name="cesantiasvalor" type="number" id="cesantiasvalor" onkeypress="return acceptNum(event)" size="30" maxlength="50" /></td>
+          <td colspan="3" bgcolor="<?php echo $c54 ?>"><input class="form-control" name="cesantiasvalor" type="number" value="0" id="cesantiasvalor" onkeypress="return acceptNum(event)" size="30" maxlength="50" /></td>
         </tr>
 
         <tr>
