@@ -154,14 +154,14 @@
 					'$preaprobadoentidad', '$cesantiasvalor', '$cesantiasentidad', '$valorahorrado', '$entidad', '$numcuenta', '$inmueble_solicitud', 
 					'$REU', '$MEU', '$MER', '$VIP', '$DES', '$SIP', 'WEB')";
 
-			mysqli_query($sle, $sql) or die(mysqli_error());
+			mysqli_query($sle, $sql) or die(mysqli_error($sle));
 
 			echo "<div class='alert alert-success'><center>Estimado <B>$nombre1 $nombre2 $apellido1 $apellido2</B> su proceso de registro ha culminado exitosamente</center></div><br>";
 
 
 			//Registra el EVENTO EN EL LOG
 			$sql = "INSERT INTO log_eventos (fecha, hora, usuario, registro, evento) VALUES (now(), now(), '123456789', '$cedula', 'INSERT WEB')";
-			mysqli_query($sle, $sql) or die(mysqli_error());
+			mysqli_query($sle, $sql) or die(mysqli_error($sle));
 			//****************************
 			?>
 		</p>

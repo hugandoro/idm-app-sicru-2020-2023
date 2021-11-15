@@ -1,6 +1,6 @@
 <?php
     header('Content-Type: text/html; charset=UTF-8');
-    error_reporting(0);
+    error_reporting(-1);
     
     $currentPage = $_SERVER["PHP_SELF"];
     session_start();
