@@ -49,7 +49,7 @@
         <img class="card-img-top" src="imagenes/icono_5.png" alt="Card image cap" style="border-radius: 0%;">
         <div class="card-footer" style="text-align: center;">
           <?php if ($_SESSION["nivel"] == "2") { ?>
-            <!-- <a href="visitas.php"><button type='submit' class='btn btn-outline-success btn-sm btn-block'>Visitas tecnicas</button></a> -->
+            <a href="visitas.php"><button type='submit' class='btn btn-outline-success btn-sm btn-block'>Visitas tecnicas</button></a>
           <?php } ?>
         </div>
       </div>
