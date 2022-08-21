@@ -89,7 +89,7 @@
             <tr>
               <td>Evidencia Grafica</td>
               <td>
-                <img src="anexos/<?php echo "$row[112]"; ?>" width="300" alt="Imagen - Fotografia" />
+                <img src="anexos/<?php echo $row[112]; ?>" width="300" alt="Imagen - Fotografia" />
                 <!--<form name="form1" method="post" action="visitas_general2.php" enctype="multipart/form-data" onclick="pregunta()">
                   <hr><input class="form-control" name="anexo" type="file" id="anexo" class='form-control' />
                   <input class="form-control" type="hidden" name="codigo" <?php echo "value = $codigo"; ?>>

@@ -16,13 +16,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta name="application-name" content="BIEN - Instituto de Desarrollo Municipal - Dosquebradas">
-    <meta name="author" content="Instituto de Desarrollo Municipal - BIEN">
+    <meta name="application-name" content="BIEN - Empresa de Desarrollo Urbano y Rural de Dosquebradas - Dosquebradas">
+    <meta name="author" content="Empresa de Desarrollo Urbano y Rural de Dosquebradas - BIEN">
     <meta name="description" content="BIEN">
-    <meta name="generator" content="BIEN - IDM">
-    <meta name="keywords" content="IDM, BIEN, Dosquebradas">
+    <meta name="generator" content="BIEN - EDOS">
+    <meta name="keywords" content="EDOS, BIEN, Dosquebradas">
 
-    <title>IDM | BIEN</title>
+    <title>EDOS | BIEN</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">

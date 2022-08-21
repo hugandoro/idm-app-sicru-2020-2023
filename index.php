@@ -6,13 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta name="application-name" content="SICRU - Instituto de Desarrollo Municipal - Dosquebradas">
-    <meta name="author" content="Instituto de Desarrollo Municipal - IDM">
-    <meta name="description" content="SICRU">
-    <meta name="generator" content="SICRU - IDM">
-    <meta name="keywords" content="IDM, SICRU, Dosquebradas">
+    <meta name="application-name" content="BIEN - Empresa de Desarrollo Urbano y Rural de Dosquebradas - Dosquebradas">
+    <meta name="author" content="Empresa de Desarrollo Urbano y Rural de Dosquebradas - BIEN">
+    <meta name="description" content="BIEN">
+    <meta name="generator" content="BIEN - EDOS">
+    <meta name="keywords" content="EDOS, BIEN, Dosquebradas">
 
-    <title>IDM | BIEN</title>
+    <title>EDOS | BIEN</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -70,7 +70,7 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="ingreso.php" style="color:#444444;"> | Ingreso funcionarios IDM | </a>
+                            <a class="nav-link" href="ingreso.php" style="color:#444444;"> | Ingreso funcionarios EDOS | </a>
                         </li>
                     </ul>
                 </div>
@@ -88,7 +88,7 @@
 
                         <div class="col-1"></div>
                         <div class="col-10" align="center">
-                            <div style="font-size: 32pt;color: #000000;"><b>Con el IDM todos estamos BIEN</b></div>
+                            <div style="font-size: 32pt;color: #000000;"><b>Con EDOS todos estamos BIEN</b></div>
                         </div>
                         <div class="col-1"></div>
 
@@ -130,7 +130,7 @@
             <div class="row">
                 <div class="col-12 col-md">
                     <center>
-                        <small class="d-block mb-3 text-muted">Instituto de Desarrollo Municipal | IDM | &copy; 2020-2023</small>
+                        <small class="d-block mb-3 text-muted">Empresa de Desarrollo Urbano y Rural de Dosquebradas | EDOS | &copy; 2020-2023</small>
                     </center>
                 </div>
             </div>
@@ -138,4 +138,6 @@
 
     </div>
 
-    <script src="https://widget.flowxo.com/embed.js" data-fxo-widget="eyJ0aGVtZSI6IiMzMjNhNDYiLCJ3ZWIiOnsiYm90SWQiOiI2MDM0NzBhNmY4NjU5MDAwNGQ0N2FkNGUiLCJ0aGVtZSI6IiMzMjNhNDYiLCJsYWJlbCI6IkNvbnZlcnNhIGNvbiBub3NvdHJvcy4uLiJ9LCJ3ZWxjb21lVGV4dCI6IlNhbHVkb3MsIGJpZW52ZW5pZG8gYWwgSW5zdGl0dXRvIGRlIERlc2Fycm9sbG8gTXVuaWNpcGFsIGRlIERvc3F1ZWJyYWRhcyAoUmlzYXJhbGRhKSJ9" async defer></script>
+    <!--
+        <script src="https://widget.flowxo.com/embed.js" data-fxo-widget="eyJ0aGVtZSI6IiMzMjNhNDYiLCJ3ZWIiOnsiYm90SWQiOiI2MDM0NzBhNmY4NjU5MDAwNGQ0N2FkNGUiLCJ0aGVtZSI6IiMzMjNhNDYiLCJsYWJlbCI6IkNvbnZlcnNhIGNvbiBub3NvdHJvcy4uLiJ9LCJ3ZWxjb21lVGV4dCI6IlNhbHVkb3MsIGJpZW52ZW5pZG8gYWwgSW5zdGl0dXRvIGRlIERlc2Fycm9sbG8gTXVuaWNpcGFsIGRlIERvc3F1ZWJyYWRhcyAoUmlzYXJhbGRhKSJ9" async defer></script>
+    -->
